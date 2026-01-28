@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -12,137 +12,103 @@ body {
   font-family: 'Lato', system-ui, sans-serif;
 }
 
-/* Selection styling */
 ::selection {
   background-color: #006EB5;
   color: white;
 }
 
 @layer components {
-  /* Primary CTA button - warm and inviting */
+  /* Primary CTA - Bold accent blue */
   .btn-primary {
-    @apply bg-warmth hover:bg-warmth-dark text-white font-semibold py-3 px-8 rounded-lg
-           transition-all duration-300 shadow-warm hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-accent hover:bg-accent-dark text-white font-bold py-3.5 px-8 rounded-md
+           transition-all duration-200 shadow-blue hover:shadow-strong uppercase tracking-wide text-sm;
   }
 
-  /* Secondary button - Newcastle blue */
+  /* Secondary button - Solid newcastle blue */
   .btn-secondary {
-    @apply bg-newcastle hover:bg-newcastle-dark text-white font-semibold py-3 px-8 rounded-lg
-           transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-newcastle hover:bg-newcastle-dark text-white font-bold py-3.5 px-8 rounded-md
+           transition-all duration-200 hover:shadow-blue uppercase tracking-wide text-sm;
   }
 
-  /* Outline button */
+  /* Outline button - Strong border */
   .btn-outline {
     @apply border-2 border-newcastle text-newcastle hover:bg-newcastle hover:text-white
-           font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+           font-bold py-3 px-8 rounded-md transition-all duration-200 uppercase tracking-wide text-sm;
   }
 
-  /* White outline button for dark backgrounds */
+  /* White outline for dark backgrounds */
   .btn-outline-white {
     @apply border-2 border-white text-white hover:bg-white hover:text-newcastle
-           font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+           font-bold py-3 px-8 rounded-md transition-all duration-200 uppercase tracking-wide text-sm;
   }
 
-  /* Gradient button - fun and entertaining */
-  .btn-gradient {
-    @apply bg-gradient-to-r from-newcastle via-newcastle-light to-warmth text-white font-bold
-           py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5
-           bg-[length:200%_100%] hover:bg-right;
-  }
-
-  /* Section headings */
+  /* Section headings - Bold and impactful */
   .section-heading {
-    @apply text-3xl md:text-4xl font-heading font-bold text-charcoal mb-4;
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-charcoal tracking-tight;
   }
 
   .section-heading-light {
-    @apply text-3xl md:text-4xl font-heading font-bold text-white mb-4;
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight;
   }
 
   .section-subheading {
-    @apply text-lg text-charcoal-light max-w-2xl font-light;
+    @apply text-lg text-charcoal-light max-w-2xl;
   }
 
-  /* Cards with warm shadows */
+  /* Cards - Clean with blue accents */
   .card {
-    @apply bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300
-           hover:shadow-warm hover:-translate-y-1;
+    @apply bg-white rounded-lg shadow-soft overflow-hidden transition-all duration-300
+           hover:shadow-strong border border-slate;
   }
 
   .card-bordered {
-    @apply bg-white rounded-xl shadow-soft overflow-hidden border-l-4 border-warmth
-           transition-all duration-300 hover:shadow-warm;
+    @apply bg-white rounded-lg shadow-soft overflow-hidden border-l-4 border-newcastle
+           transition-all duration-300 hover:shadow-strong;
   }
 
-  /* Feature badge */
+  /* Badges - Monochromatic */
   .badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
   }
 
   .badge-primary {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-newcastle/10 text-newcastle;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
+           bg-newcastle-100 text-newcastle-700;
   }
 
-  .badge-warm {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-warmth/10 text-warmth-dark;
+  .badge-dark {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
+           bg-newcastle-800 text-white;
   }
 
-  .badge-sage {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-sage/10 text-sage-dark;
+  .badge-light {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
+           bg-white/20 text-white backdrop-blur-sm;
   }
 
-  /* Decorative elements */
+  /* Accent bar - Blue gradient */
   .accent-bar {
-    @apply h-1 w-16 bg-gradient-to-r from-newcastle to-warmth rounded-full;
+    @apply h-1 w-20 bg-gradient-to-r from-newcastle to-accent rounded-full;
   }
 
-  /* Warm glow effect for special elements */
-  .warm-glow {
-    @apply relative;
-  }
-
-  .warm-glow::before {
-    content: '';
-    @apply absolute -inset-1 bg-gradient-to-r from-warmth/20 to-newcastle/20 rounded-xl blur-lg opacity-0
-           transition-opacity duration-300;
-  }
-
-  .warm-glow:hover::before {
-    @apply opacity-100;
-  }
-
-  /* Animated underline for links */
-  .animated-underline {
-    @apply relative;
-  }
-
-  .animated-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-warmth transition-all duration-300;
-  }
-
-  .animated-underline:hover::after {
-    @apply w-full;
-  }
-
-  /* Stats counter style */
-  .stat-number {
-    @apply text-4xl md:text-5xl font-bold bg-gradient-to-r from-newcastle to-warmth bg-clip-text text-transparent;
-  }
-
-  /* Image overlay for hero sections */
+  /* Hero overlay - Dark blue gradient */
   .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-r from-charcoal-dark/80 via-charcoal-dark/60 to-transparent;
+    @apply absolute inset-0 bg-gradient-to-r from-newcastle-950/90 via-newcastle-900/70 to-newcastle-800/50;
   }
 
-  /* Fun hover effect for community cards */
+  /* Community cards */
   .community-card {
-    @apply bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300
-           hover:shadow-warm hover:-translate-y-1 cursor-pointer;
+    @apply bg-white rounded-lg shadow-soft overflow-hidden transition-all duration-300
+           hover:shadow-strong border border-slate cursor-pointer;
   }
 
   .community-card:hover .community-image {
-    @apply scale-110;
+    @apply scale-105;
+  }
+
+  /* Stats - Bold numbers */
+  .stat-number {
+    @apply text-5xl md:text-6xl font-heading font-black text-newcastle;
   }
 }
 
@@ -151,33 +117,23 @@ body {
     text-wrap: balance;
   }
 
-  /* Gradient text */
   .text-gradient {
-    @apply bg-gradient-to-r from-newcastle to-warmth bg-clip-text text-transparent;
-  }
-
-  /* Smooth scroll snap */
-  .scroll-snap-x {
-    scroll-snap-type: x mandatory;
-  }
-
-  .scroll-snap-center {
-    scroll-snap-align: center;
+    @apply bg-gradient-to-r from-newcastle-300 to-white bg-clip-text text-transparent;
   }
 }
 
-/* Custom scrollbar for a polished feel */
+/* Custom scrollbar - Blue theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #E8EEF2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #006EB5, #1A80B6);
-  border-radius: 5px;
+  background: #006EB5;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

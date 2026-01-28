@@ -34,16 +34,16 @@ export default function Header() {
             <div className="flex items-center">
               {/* House icon */}
               <div className="mr-3 relative">
-                <svg className="w-10 h-10 text-newcastle group-hover:text-warmth transition-colors" viewBox="0 0 40 40" fill="currentColor">
+                <svg className="w-10 h-10 text-newcastle group-hover:text-accent transition-colors" viewBox="0 0 40 40" fill="currentColor">
                   <path d="M20 5L4 18h4v14h10v-10h4v10h10V18h4L20 5z"/>
                 </svg>
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-warmth rounded-full animate-pulse" />
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse" />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-heading font-bold text-newcastle tracking-tight">
                   Newcastle
                 </span>
-                <span className="text-xs text-warmth font-semibold uppercase tracking-widest">
+                <span className="text-xs text-accent font-semibold uppercase tracking-widest">
                   Homes
                 </span>
               </div>
@@ -83,7 +83,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-warmgray transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-slate transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg
@@ -115,12 +115,12 @@ export default function Header() {
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
           mobileMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
         }`}>
-          <div className="flex flex-col space-y-1 pt-2 border-t border-warmgray">
+          <div className="flex flex-col space-y-1 pt-2 border-t border-slate">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-charcoal hover:text-newcastle hover:bg-warmgray font-medium px-4 py-3 rounded-lg transition-colors"
+                className="text-charcoal hover:text-newcastle hover:bg-slate font-medium px-4 py-3 rounded-lg transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
@@ -128,7 +128,7 @@ export default function Header() {
             ))}
             <Link
               href="/dashboard"
-              className="text-charcoal-light hover:text-newcastle hover:bg-warmgray font-medium px-4 py-3 rounded-lg transition-colors flex items-center gap-2"
+              className="text-charcoal-light hover:text-newcastle hover:bg-slate font-medium px-4 py-3 rounded-lg transition-colors flex items-center gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

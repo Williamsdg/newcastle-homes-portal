@@ -9,58 +9,61 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Newcastle Homes Primary Blue
+        // Newcastle Blue - Full Monochromatic Palette
         newcastle: {
+          50: '#E6F3FB',
+          100: '#CCE7F7',
+          200: '#99CFEF',
+          300: '#66B7E7',
+          400: '#339FDF',
+          500: '#006EB5',  // Primary brand blue
+          600: '#005a94',
+          700: '#004577',
+          800: '#00315A',
+          900: '#001C3D',
+          950: '#000F20',
           DEFAULT: '#006EB5',
           light: '#1A80B6',
           dark: '#005a94',
           darker: '#004577',
         },
-        // Warm accent colors for inviting feel
-        warmth: {
-          DEFAULT: '#E07A3D',
-          light: '#F4A261',
-          dark: '#C55A24',
-          glow: '#FFB088',
+        // Accent blue (slightly different tone for CTAs)
+        accent: {
+          DEFAULT: '#0088D4',
+          light: '#33A3E0',
+          dark: '#0070B0',
         },
         // Charcoal for text
         charcoal: {
-          DEFAULT: '#333333',
-          light: '#515151',
-          dark: '#1a1a1a',
+          DEFAULT: '#1E2A3A',
+          light: '#3D4F61',
+          dark: '#0F1620',
         },
-        // Warm grays and creams
-        warmgray: {
-          DEFAULT: '#EDEDED',
-          light: '#F7F7F5',
-          dark: '#D4D4D4',
-          warm: '#FAF8F5',
-        },
-        // Success/nature green
-        sage: {
-          DEFAULT: '#7BA05B',
-          light: '#9BC07B',
-          dark: '#5B8040',
+        // Cool grays (blue-tinted)
+        slate: {
+          DEFAULT: '#E8EEF2',
+          light: '#F4F7F9',
+          dark: '#CBD5DC',
+          darker: '#94A3B8',
         },
       },
       fontFamily: {
         sans: ['Lato', 'system-ui', 'sans-serif'],
         heading: ['Montserrat', 'system-ui', 'sans-serif'],
-        accent: ['Lora', 'Georgia', 'serif'],
       },
       backgroundImage: {
-        'gradient-warm': 'linear-gradient(135deg, #006EB5 0%, #1A80B6 50%, #E07A3D 100%)',
-        'gradient-sunset': 'linear-gradient(to right, #F4A261, #E07A3D, #C55A24)',
-        'gradient-sky': 'linear-gradient(to bottom, #006EB5, #1A80B6)',
+        'gradient-blue': 'linear-gradient(135deg, #006EB5 0%, #004577 100%)',
+        'gradient-blue-light': 'linear-gradient(135deg, #1A80B6 0%, #006EB5 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #001C3D 0%, #00315A 100%)',
       },
       boxShadow: {
-        'warm': '0 4px 20px rgba(224, 122, 61, 0.15)',
-        'soft': '0 2px 15px rgba(0, 0, 0, 0.08)',
+        'blue': '0 4px 20px rgba(0, 110, 181, 0.25)',
+        'soft': '0 2px 15px rgba(0, 0, 0, 0.06)',
+        'strong': '0 8px 30px rgba(0, 0, 0, 0.12)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
         'slide-up': 'slideUp 0.5s ease-out',
-        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -70,10 +73,6 @@ const config: Config = {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },
