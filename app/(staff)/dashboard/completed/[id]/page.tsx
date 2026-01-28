@@ -149,38 +149,38 @@ const completedProperties: Record<string, {
   },
 }
 
-// Combined list of all contractors who worked on each completed property
+// Combined list of all contractors who worked on each completed property with ratings
 const allContractors = [
-  { phase: '1. Pre-Construction', company: 'Birmingham Design Group', role: 'Architect / Residential Designer', contact: 'David Chen', phone: '(205) 555-5001' },
-  { phase: '1. Pre-Construction', company: 'Alabama Survey Co.', role: 'Land Surveyor', contact: 'Robert Taylor', phone: '(205) 555-5003' },
-  { phase: '2. Site Preparation', company: 'Premier Excavation', role: 'Excavation / Grading', contact: 'James Miller', phone: '(205) 555-5010' },
-  { phase: '2. Site Preparation', company: 'AL-One Call', role: 'Utility Locator', contact: 'Service Line', phone: '811' },
-  { phase: '3. Foundation & Structure', company: 'Rodriguez Concrete & Foundation', role: 'Concrete Contractor', contact: 'Miguel Rodriguez', phone: '(205) 555-5020' },
-  { phase: '3. Foundation & Structure', company: 'DryShield Waterproofing', role: 'Waterproofing', contact: 'Tom Harris', phone: '(205) 555-5021' },
-  { phase: '3. Foundation & Structure', company: 'Wilson Framing Co.', role: 'Framing Contractor', contact: 'James Wilson', phone: '(205) 555-5022' },
-  { phase: '3. Foundation & Structure', company: 'Southern Truss Systems', role: 'Truss Manufacturer', contact: 'Keith Anderson', phone: '(205) 555-5023' },
-  { phase: '4. Mechanical Rough-Ins', company: 'Thompson Plumbing Services', role: 'Plumber', contact: 'Derek Thompson', phone: '(205) 555-5030' },
-  { phase: '4. Mechanical Rough-Ins', company: 'Birmingham Electric Pro', role: 'Electrician', contact: 'Carlos Hernandez', phone: '(205) 555-5031' },
-  { phase: '4. Mechanical Rough-Ins', company: 'Bradley HVAC Solutions', role: 'HVAC', contact: 'Tom Bradley', phone: '(205) 555-5032' },
-  { phase: '4. Mechanical Rough-Ins', company: 'SmartHome Wiring Co.', role: 'Low Voltage / Structured Wiring', contact: 'Alex Turner', phone: '(205) 555-5033' },
-  { phase: '5. Building Envelope', company: 'Alabama Roofing Experts', role: 'Roofing Contractor', contact: 'David Mitchell', phone: '(205) 555-5040' },
-  { phase: '5. Building Envelope', company: 'Crystal Clear Windows', role: 'Window & Door Installer', contact: 'Brian Adams', phone: '(205) 555-5041' },
-  { phase: '5. Building Envelope', company: 'Exterior Solutions LLC', role: 'Siding / Exterior', contact: 'Kevin Martin', phone: '(205) 555-5042' },
-  { phase: '5. Building Envelope', company: 'ThermalPro Insulation', role: 'Insulation', contact: 'Steve Clark', phone: '(205) 555-5043' },
-  { phase: '6. Interior Finishes', company: 'Precision Drywall Inc.', role: 'Drywall Contractor', contact: 'Robert Chen', phone: '(205) 555-5050' },
-  { phase: '6. Interior Finishes', company: 'Southern Paint & Finishes', role: 'Painter', contact: 'Jennifer Adams', phone: '(205) 555-5051' },
-  { phase: '6. Interior Finishes', company: 'Fine Trim Carpentry', role: 'Trim Carpenter', contact: 'Michael Scott', phone: '(205) 555-5052' },
-  { phase: '6. Interior Finishes', company: 'Flooring Depot Pro', role: 'Flooring Contractor', contact: 'Lisa Wong', phone: '(205) 555-5053' },
-  { phase: '6. Interior Finishes', company: 'Cabinet World', role: 'Cabinet Installer', contact: 'John Peters', phone: '(205) 555-5054' },
-  { phase: '6. Interior Finishes', company: 'Granite Masters', role: 'Countertop Fabricator', contact: 'Sarah Lee', phone: '(205) 555-5055' },
-  { phase: '7. Final Mechanical', company: 'Thompson Plumbing Services', role: 'Plumber (Return)', contact: 'Derek Thompson', phone: '(205) 555-5030' },
-  { phase: '7. Final Mechanical', company: 'Birmingham Electric Pro', role: 'Electrician (Return)', contact: 'Carlos Hernandez', phone: '(205) 555-5031' },
-  { phase: '7. Final Mechanical', company: 'Bradley HVAC Solutions', role: 'HVAC (Return)', contact: 'Tom Bradley', phone: '(205) 555-5032' },
-  { phase: '7. Final Mechanical', company: 'Home Appliance Center', role: 'Appliance Installation', contact: 'Nancy Wilson', phone: '(205) 555-5060' },
-  { phase: '8. Exterior & Landscape', company: 'Rodriguez Concrete & Foundation', role: 'Flatwork (Driveway/Patios)', contact: 'Miguel Rodriguez', phone: '(205) 555-5020' },
-  { phase: '8. Exterior & Landscape', company: 'Green Thumb Landscaping', role: 'Landscaper', contact: 'Maria Garcia', phone: '(205) 555-5070' },
-  { phase: '9. Final Inspections', company: 'Sparkle Clean Services', role: 'Cleaning Crew', contact: 'Anna Martinez', phone: '(205) 555-5080' },
-  { phase: '9. Final Inspections', company: 'Newcastle Homes', role: 'Punch List Review', contact: 'Project Manager', phone: '(205) 555-1000' },
+  { phase: '1. Pre-Construction', company: 'Birmingham Design Group', role: 'Architect / Residential Designer', contact: 'David Chen', phone: '(205) 555-5001', rating: 5, review: 'Excellent design work, delivered on time with great attention to detail.' },
+  { phase: '1. Pre-Construction', company: 'Alabama Survey Co.', role: 'Land Surveyor', contact: 'Robert Taylor', phone: '(205) 555-5003', rating: 5, review: 'Fast and accurate survey work.' },
+  { phase: '2. Site Preparation', company: 'Premier Excavation', role: 'Excavation / Grading', contact: 'James Miller', phone: '(205) 555-5010', rating: 4, review: 'Good work, site properly graded. Minor cleanup issues.' },
+  { phase: '2. Site Preparation', company: 'AL-One Call', role: 'Utility Locator', contact: 'Service Line', phone: '811', rating: 5, review: 'All utilities properly marked.' },
+  { phase: '3. Foundation & Structure', company: 'Rodriguez Concrete & Foundation', role: 'Concrete Contractor', contact: 'Miguel Rodriguez', phone: '(205) 555-5020', rating: 5, review: 'Outstanding concrete work, level foundation, no issues.' },
+  { phase: '3. Foundation & Structure', company: 'DryShield Waterproofing', role: 'Waterproofing', contact: 'Tom Harris', phone: '(205) 555-5021', rating: 4, review: 'Good waterproofing application.' },
+  { phase: '3. Foundation & Structure', company: 'Wilson Framing Co.', role: 'Framing Contractor', contact: 'James Wilson', phone: '(205) 555-5022', rating: 5, review: 'Excellent framing, square and true. Great crew.' },
+  { phase: '3. Foundation & Structure', company: 'Southern Truss Systems', role: 'Truss Manufacturer', contact: 'Keith Anderson', phone: '(205) 555-5023', rating: 5, review: 'Trusses delivered on schedule, perfect fit.' },
+  { phase: '4. Mechanical Rough-Ins', company: 'Thompson Plumbing Services', role: 'Plumber', contact: 'Derek Thompson', phone: '(205) 555-5030', rating: 5, review: 'Clean pipe work, passed inspection first time.' },
+  { phase: '4. Mechanical Rough-Ins', company: 'Birmingham Electric Pro', role: 'Electrician', contact: 'Carlos Hernandez', phone: '(205) 555-5031', rating: 4, review: 'Good electrical rough-in, one minor code correction needed.' },
+  { phase: '4. Mechanical Rough-Ins', company: 'Bradley HVAC Solutions', role: 'HVAC', contact: 'Tom Bradley', phone: '(205) 555-5032', rating: 5, review: 'System installed properly, excellent airflow balance.' },
+  { phase: '4. Mechanical Rough-Ins', company: 'SmartHome Wiring Co.', role: 'Low Voltage / Structured Wiring', contact: 'Alex Turner', phone: '(205) 555-5033', rating: 4, review: 'Good work on smart home wiring. Minor labeling issue.' },
+  { phase: '5. Building Envelope', company: 'Alabama Roofing Experts', role: 'Roofing Contractor', contact: 'David Mitchell', phone: '(205) 555-5040', rating: 5, review: 'Excellent roofing job, very clean and professional.' },
+  { phase: '5. Building Envelope', company: 'Crystal Clear Windows', role: 'Window & Door Installer', contact: 'Brian Adams', phone: '(205) 555-5041', rating: 4, review: 'Good installation, one window seal needed adjustment.' },
+  { phase: '5. Building Envelope', company: 'Exterior Solutions LLC', role: 'Siding / Exterior', contact: 'Kevin Martin', phone: '(205) 555-5042', rating: 5, review: 'Beautiful siding work, clean installation.' },
+  { phase: '5. Building Envelope', company: 'ThermalPro Insulation', role: 'Insulation', contact: 'Steve Clark', phone: '(205) 555-5043', rating: 5, review: 'Excellent coverage, passed energy inspection with high marks.' },
+  { phase: '6. Interior Finishes', company: 'Precision Drywall Inc.', role: 'Drywall Contractor', contact: 'Robert Chen', phone: '(205) 555-5050', rating: 5, review: 'Smooth finish, no visible seams, excellent work.' },
+  { phase: '6. Interior Finishes', company: 'Southern Paint & Finishes', role: 'Painter', contact: 'Jennifer Adams', phone: '(205) 555-5051', rating: 4, review: 'Good paint job, one touch-up needed.' },
+  { phase: '6. Interior Finishes', company: 'Fine Trim Carpentry', role: 'Trim Carpenter', contact: 'Michael Scott', phone: '(205) 555-5052', rating: 5, review: 'Exceptional trim work, tight joints, beautiful finish.' },
+  { phase: '6. Interior Finishes', company: 'Flooring Depot Pro', role: 'Flooring Contractor', contact: 'Lisa Wong', phone: '(205) 555-5053', rating: 5, review: 'Perfect flooring installation, no issues.' },
+  { phase: '6. Interior Finishes', company: 'Cabinet World', role: 'Cabinet Installer', contact: 'John Peters', phone: '(205) 555-5054', rating: 4, review: 'Good cabinet installation, one door alignment adjustment needed.' },
+  { phase: '6. Interior Finishes', company: 'Granite Masters', role: 'Countertop Fabricator', contact: 'Sarah Lee', phone: '(205) 555-5055', rating: 5, review: 'Beautiful countertops, perfect seams, excellent work.' },
+  { phase: '7. Final Mechanical', company: 'Thompson Plumbing Services', role: 'Plumber (Return)', contact: 'Derek Thompson', phone: '(205) 555-5030', rating: 5, review: 'All fixtures installed perfectly.' },
+  { phase: '7. Final Mechanical', company: 'Birmingham Electric Pro', role: 'Electrician (Return)', contact: 'Carlos Hernandez', phone: '(205) 555-5031', rating: 5, review: 'All fixtures and switches work perfectly.' },
+  { phase: '7. Final Mechanical', company: 'Bradley HVAC Solutions', role: 'HVAC (Return)', contact: 'Tom Bradley', phone: '(205) 555-5032', rating: 5, review: 'System running smoothly, all registers balanced.' },
+  { phase: '7. Final Mechanical', company: 'Home Appliance Center', role: 'Appliance Installation', contact: 'Nancy Wilson', phone: '(205) 555-5060', rating: 4, review: 'Appliances installed properly, minor scheduling issue.' },
+  { phase: '8. Exterior & Landscape', company: 'Rodriguez Concrete & Foundation', role: 'Flatwork (Driveway/Patios)', contact: 'Miguel Rodriguez', phone: '(205) 555-5020', rating: 5, review: 'Beautiful driveway and patio work.' },
+  { phase: '8. Exterior & Landscape', company: 'Green Thumb Landscaping', role: 'Landscaper', contact: 'Maria Garcia', phone: '(205) 555-5070', rating: 5, review: 'Excellent landscaping, great curb appeal.' },
+  { phase: '9. Final Inspections', company: 'Sparkle Clean Services', role: 'Cleaning Crew', contact: 'Anna Martinez', phone: '(205) 555-5080', rating: 5, review: 'Home was spotless for walkthrough.' },
+  { phase: '9. Final Inspections', company: 'Newcastle Homes', role: 'Punch List Review', contact: 'Project Manager', phone: '(205) 555-1000', rating: 5, review: 'Thorough punch list completion.' },
 ]
 
 // Equipment used throughout the project
@@ -197,6 +197,26 @@ const allEquipment = [
   { name: 'Generator 20kW', id: 'EQ-004', phase: 'Multiple Phases', hours: 80 },
 ]
 
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex items-center gap-0.5">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <svg
+          key={star}
+          className={`w-4 h-4 ${
+            rating >= star
+              ? 'text-amber-400 fill-amber-400'
+              : 'text-slate-300 fill-slate-300'
+          }`}
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  )
+}
+
 export default function CompletedDetailPage({ params }: { params: { id: string } }) {
   const property = completedProperties[params.id] || completedProperties['1']
 
@@ -208,6 +228,16 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
   }
 
   const totalEquipmentHours = allEquipment.reduce((sum, eq) => sum + eq.hours, 0)
+  const avgRating = (allContractors.reduce((sum, c) => sum + c.rating, 0) / allContractors.length).toFixed(1)
+  const fiveStarCount = allContractors.filter(c => c.rating === 5).length
+  const fourStarCount = allContractors.filter(c => c.rating === 4).length
+
+  const getRatingColor = (rating: number) => {
+    if (rating >= 4.5) return 'text-green-600'
+    if (rating >= 4) return 'text-green-500'
+    if (rating >= 3) return 'text-amber-500'
+    return 'text-red-500'
+  }
 
   return (
     <div>
@@ -308,10 +338,18 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
       </div>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
         <div className="bg-white p-5 rounded-xl shadow-soft text-center">
           <p className="text-3xl font-bold text-newcastle">{allContractors.length}</p>
           <p className="text-sm text-charcoal-light">Total Contractors</p>
+        </div>
+        <div className="bg-white p-5 rounded-xl shadow-soft text-center">
+          <p className={`text-3xl font-bold ${getRatingColor(parseFloat(avgRating))}`}>{avgRating}</p>
+          <p className="text-sm text-charcoal-light">Avg Contractor Rating</p>
+        </div>
+        <div className="bg-white p-5 rounded-xl shadow-soft text-center">
+          <p className="text-3xl font-bold text-green-600">{fiveStarCount}</p>
+          <p className="text-sm text-charcoal-light">5-Star Ratings</p>
         </div>
         <div className="bg-white p-5 rounded-xl shadow-soft text-center">
           <p className="text-3xl font-bold text-newcastle">{allEquipment.length}</p>
@@ -326,46 +364,50 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
-          {/* All Contractors */}
+          {/* All Contractors with Ratings */}
           <div className="bg-white rounded-xl shadow-soft overflow-hidden">
             <div className="p-5 border-b border-slate bg-newcastle text-white">
-              <h2 className="text-lg font-heading font-semibold">All Contractors on Project</h2>
-              <p className="text-sm text-white/80">Complete list of companies who built this home</p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-lg font-heading font-semibold">All Contractors on Project</h2>
+                  <p className="text-sm text-white/80">Complete list with performance ratings</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold">{avgRating}/5</p>
+                  <p className="text-xs text-white/80">Overall Avg</p>
+                </div>
+              </div>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-slate-light">
-                  <tr>
-                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Phase</th>
-                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Company</th>
-                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Role</th>
-                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Contact</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate">
-                  {allContractors.map((contractor, idx) => (
-                    <tr key={idx} className="hover:bg-slate-light/50 transition-colors">
-                      <td className="px-5 py-3">
-                        <span className="text-xs font-medium text-charcoal-light">{contractor.phase}</span>
-                      </td>
-                      <td className="px-5 py-3">
-                        <span className="font-medium text-charcoal">{contractor.company}</span>
-                      </td>
-                      <td className="px-5 py-3">
-                        <span className="text-sm text-charcoal">{contractor.role}</span>
-                      </td>
-                      <td className="px-5 py-3">
-                        <div>
-                          <span className="text-sm text-charcoal block">{contractor.contact}</span>
-                          <a href={`tel:${contractor.phone}`} className="text-xs text-newcastle hover:text-accent">
-                            {contractor.phone}
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="divide-y divide-slate">
+              {allContractors.map((contractor, idx) => (
+                <div key={idx} className="p-4 hover:bg-slate-light/50 transition-colors">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-medium text-newcastle bg-newcastle-50 px-2 py-0.5 rounded-full">
+                          {contractor.phase}
+                        </span>
+                      </div>
+                      <p className="font-semibold text-charcoal">{contractor.company}</p>
+                      <p className="text-sm text-charcoal-light">{contractor.role}</p>
+                      <p className="text-sm text-charcoal-light mt-1">
+                        {contractor.contact} • <a href={`tel:${contractor.phone}`} className="text-newcastle hover:text-accent">{contractor.phone}</a>
+                      </p>
+                    </div>
+                    <div className="flex flex-col items-end gap-1">
+                      <StarRating rating={contractor.rating} />
+                      <span className={`text-sm font-semibold ${getRatingColor(contractor.rating)}`}>
+                        {contractor.rating}/5
+                      </span>
+                    </div>
+                  </div>
+                  {contractor.review && (
+                    <p className="mt-2 text-sm text-charcoal-light italic bg-slate-light/50 p-2 rounded">
+                      &quot;{contractor.review}&quot;
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -420,6 +462,53 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
 
         {/* Sidebar */}
         <div className="space-y-6">
+          {/* Rating Summary */}
+          <div className="bg-white rounded-xl shadow-soft p-5">
+            <h2 className="text-lg font-heading font-semibold text-charcoal mb-4">Rating Summary</h2>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <StarRating rating={5} />
+                  <span className="text-sm text-charcoal">5 Stars</span>
+                </div>
+                <span className="font-semibold text-charcoal">{fiveStarCount}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <StarRating rating={4} />
+                  <span className="text-sm text-charcoal">4 Stars</span>
+                </div>
+                <span className="font-semibold text-charcoal">{fourStarCount}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <StarRating rating={3} />
+                  <span className="text-sm text-charcoal">3 Stars</span>
+                </div>
+                <span className="font-semibold text-charcoal">0</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <StarRating rating={2} />
+                  <span className="text-sm text-charcoal">2 Stars</span>
+                </div>
+                <span className="font-semibold text-charcoal">0</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <StarRating rating={1} />
+                  <span className="text-sm text-charcoal">1 Star</span>
+                </div>
+                <span className="font-semibold text-charcoal">0</span>
+              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-slate">
+              <p className="text-sm text-charcoal-light">
+                <span className="font-semibold text-green-600">{fiveStarCount}</span> contractors received 5-star ratings and are recommended for future projects.
+              </p>
+            </div>
+          </div>
+
           {/* Actions */}
           <div className="bg-white rounded-xl shadow-soft p-5">
             <h2 className="text-lg font-heading font-semibold text-charcoal mb-4">Actions</h2>
