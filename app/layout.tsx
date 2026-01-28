@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Newcastle Homes | New Homes in Atlanta\'s Best Communities',
-  description: 'Discover your dream home with Newcastle Homes. Building quality new construction homes in Atlanta\'s most desirable communities including Griffin Park Trace and Magnolia Parkway.',
-  keywords: 'new homes Atlanta, new construction, Newcastle Homes, home builder Georgia, Griffin Park Trace, Magnolia Parkway, affordable homes',
+  title: 'Newcastle Homes | New Homes in Alabama\'s Best Communities',
+  description: 'Discover your dream home with Newcastle Homes. Since 1997, building quality new construction homes across North and Central Alabama including Birmingham, Helena, Leeds, and Tuscaloosa.',
+  keywords: 'new homes Alabama, new construction Birmingham, Newcastle Homes, home builder Alabama, The Falls, Barimore, Grand River, Helena AL, Leeds AL',
 }
 
 export default function RootLayout({

@@ -1,10 +1,11 @@
 import Link from 'next/link'
 
 const communities = [
-  { name: 'Griffin Park Trace', href: '/communities#griffin-park' },
-  { name: 'Magnolia Parkway', href: '/communities#magnolia' },
-  { name: 'Riverside Heights', href: '/communities#riverside' },
-  { name: 'Oakwood Estates', href: '/communities#oakwood' },
+  { name: 'The Falls - Birmingham', href: '/communities#the-falls' },
+  { name: 'Barimore - Helena', href: '/communities#barimore' },
+  { name: 'Grand River - Leeds', href: '/communities#grand-river' },
+  { name: 'Heritage Pines - Columbiana', href: '/communities#heritage-pines' },
+  { name: 'Havenridge - Tuscaloosa', href: '/communities#havenridge' },
 ]
 
 const quickLinks = [
@@ -128,8 +129,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div className="text-white/70">
-                  <p>123 Builder Lane</p>
-                  <p>Atlanta, GA 30301</p>
+                  <p>121 Bishop Circle</p>
+                  <p>Pelham, AL 35124</p>
                 </div>
               </li>
               <li className="flex items-center gap-3">
@@ -138,8 +139,8 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <a href="tel:4705551234" className="text-white/70 hover:text-warmth transition-colors">
-                  (470) 555-1234
+                <a href="tel:2056712931" className="text-white/70 hover:text-warmth transition-colors">
+                  (205) 671-2931
                 </a>
               </li>
               <li className="flex items-center gap-3">

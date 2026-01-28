@@ -3,36 +3,44 @@ import Image from 'next/image'
 
 const communities = [
   {
-    name: 'Griffin Park Trace',
-    location: 'Newnan, GA',
-    priceFrom: '$289,900',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
-    homes: 24,
+    name: 'The Falls',
+    location: 'Birmingham, AL 35242',
+    priceFrom: '$499,900',
+    priceTo: '$589,900',
+    image: 'https://dlqxt4mfnxo6k.cloudfront.net/newcastle-homes.com/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2J1aWxkZXJjbG91ZC9iNmQ2MDYxZDQzZDFmZGEyMTZkODMxY2YxNWE1MGQ3Ni5qcGVn/exact/webp/600/380',
+    homes: 8,
     featured: true,
+    tagline: "Birmingham's Most Coveted New Address",
   },
   {
-    name: 'Magnolia Parkway',
-    location: 'Peachtree City, GA',
-    priceFrom: '$315,000',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
-    homes: 18,
-    featured: true,
-  },
-  {
-    name: 'Riverside Heights',
-    location: 'Fayetteville, GA',
-    priceFrom: '$275,000',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800',
+    name: 'Barimore',
+    location: 'Helena, AL 35080',
+    priceFrom: '$422,900',
+    priceTo: '$524,900',
+    image: 'https://dlqxt4mfnxo6k.cloudfront.net/newcastle-homes.com/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2J1aWxkZXJjbG91ZC83ZjZhMzU3NzYwYTFmMmEwNTUzOWQ3ODNhMGNlYjlmMS5wbmc=/exact/webp/600/380',
     homes: 12,
-    featured: false,
+    featured: true,
+    tagline: 'Current Phase Selling Fast',
   },
   {
-    name: 'Oakwood Estates',
-    location: 'McDonough, GA',
-    priceFrom: '$299,500',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800',
+    name: 'Grand River',
+    location: 'Leeds, AL 35094',
+    priceFrom: '$349,900',
+    priceTo: '$534,900',
+    image: 'https://dlqxt4mfnxo6k.cloudfront.net/newcastle-homes.com/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2J1aWxkZXJjbG91ZC82Nzc3NTM2ZGQ3YjJkZWVhMzA4MTA3NWE1ODQ1NDE1ZS5qcGVn/exact/webp/600/380',
     homes: 15,
     featured: false,
+    tagline: 'Now Selling Phase Three!',
+  },
+  {
+    name: 'Heritage Pines',
+    location: 'Columbiana, AL 35051',
+    priceFrom: '$689,900',
+    priceTo: '$829,900',
+    image: 'https://dlqxt4mfnxo6k.cloudfront.net/newcastle-homes.com/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2J1aWxkZXJjbG91ZC9lOGY2ZDM4NjJjN2QwMDk3NWRlMWFmN2Q5YzNkYzk3Yy5qcGVn/exact/webp/600/380',
+    homes: 6,
+    featured: false,
+    tagline: 'Estate Living with 20+ Acres',
   },
 ]
 
@@ -77,30 +85,30 @@ const features = [
 
 const testimonials = [
   {
-    quote: "Newcastle Homes made our first home buying experience so easy and enjoyable. We love our new home in Griffin Park!",
+    quote: "Newcastle Homes made our first home buying experience so easy and enjoyable. We love our new home in Barimore!",
     author: "The Martinez Family",
-    location: "Griffin Park Trace",
+    location: "Barimore, Helena",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
   },
   {
-    quote: "The quality and attention to detail in our home exceeded our expectations. Best decision we ever made!",
+    quote: "Great quality and customer service. From the builders, realtors and the staff inside the office, great response and extremely informative regarding your build.",
     author: "David & Sarah Chen",
-    location: "Magnolia Parkway",
+    location: "The Falls, Birmingham",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100",
   },
   {
-    quote: "From the sales team to the final walkthrough, Newcastle treated us like family. Our dream home is now a reality.",
+    quote: "The homes are nice and very large for the price. The agent on duty was super helpful and really sweet. Our dream home is now a reality.",
     author: "The Johnson Family",
-    location: "Riverside Heights",
+    location: "Grand River, Leeds",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
   },
 ]
 
 const stats = [
-  { value: '500+', label: 'Happy Families' },
-  { value: '15+', label: 'Years Building' },
-  { value: '4', label: 'Communities' },
-  { value: '98%', label: 'Satisfaction Rate' },
+  { value: '1,500+', label: 'Happy Families' },
+  { value: '25+', label: 'Years Building' },
+  { value: '9', label: 'Communities' },
+  { value: 'A+', label: 'BBB Rating' },
 ]
 
 export default function HomePage() {
@@ -129,7 +137,7 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-warmth rounded-full animate-pulse" />
-              <span className="text-white/90 text-sm font-medium">Now Selling in 4 Communities</span>
+              <span className="text-white/90 text-sm font-medium">Now Selling in 9 Alabama Communities</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight">
@@ -138,7 +146,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-xl text-white/80 mb-8 max-w-2xl font-light leading-relaxed">
-              Discover beautifully designed new homes in Atlanta's most desirable communities.
+              Discover beautifully designed new homes across North and Central Alabama.
               Quality construction, modern features, and the warm welcome you deserve.
             </p>
 
@@ -190,13 +198,14 @@ export default function HomePage() {
                 Welcome to Newcastle Homes
               </h2>
               <p className="text-lg text-charcoal-light mb-6 leading-relaxed">
-                For over 15 years, we've been helping families find their perfect home in
-                Atlanta's most sought-after communities. We believe everyone deserves a
-                beautiful, well-built home they can be proud of.
+                Since 1997, we've spent over 25 years building more than just houses — we've been
+                crafting communities across North and Central Alabama with forward-thinking design,
+                timeless quality, and personalized service.
               </p>
               <p className="text-lg text-charcoal-light mb-8 leading-relaxed">
-                From your first visit to the day you get your keys, our team is here to
-                guide you every step of the way. Welcome home.
+                Named for our founder's father's hometown of Newcastle, England, we've built dream
+                homes for over 1,500 families. From your first visit to the day you get your keys,
+                our team is here to guide you every step of the way. Welcome home.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/about" className="btn-secondary">
@@ -236,7 +245,7 @@ export default function HomePage() {
             <div className="accent-bar mx-auto mb-6" />
             <h2 className="section-heading">Our Communities</h2>
             <p className="section-subheading mx-auto">
-              Explore our beautiful neighborhoods across the Atlanta metro area.
+              Explore our beautiful neighborhoods across North and Central Alabama.
               Each community offers unique amenities and that special Newcastle quality.
             </p>
           </div>
@@ -429,11 +438,11 @@ export default function HomePage() {
               </svg>
               Schedule a Tour
             </Link>
-            <a href="tel:4705551234" className="btn-outline flex items-center gap-2">
+            <a href="tel:2056712931" className="btn-outline flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call (470) 555-1234
+              Call (205) 671-2931
             </a>
           </div>
 
