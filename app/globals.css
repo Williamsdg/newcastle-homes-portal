@@ -80,15 +80,15 @@ body {
   }
 
   .badge-primary {
-    @apply badge bg-newcastle/10 text-newcastle;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-newcastle/10 text-newcastle;
   }
 
   .badge-warm {
-    @apply badge bg-warmth/10 text-warmth-dark;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-warmth/10 text-warmth-dark;
   }
 
   .badge-sage {
-    @apply badge bg-sage/10 text-sage-dark;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-sage/10 text-sage-dark;
   }
 
   /* Decorative elements */
@@ -137,7 +137,8 @@ body {
 
   /* Fun hover effect for community cards */
   .community-card {
-    @apply card group cursor-pointer;
+    @apply bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300
+           hover:shadow-warm hover:-translate-y-1 cursor-pointer;
   }
 
   .community-card:hover .community-image {
