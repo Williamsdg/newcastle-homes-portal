@@ -13,37 +13,42 @@ const mainNavItems = [
       </svg>
     ),
   },
-]
-
-const underConstructionItems = [
   {
-    name: 'Active Builds',
-    href: '/dashboard/construction',
+    name: 'All Properties',
+    href: '/dashboard/properties',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    badge: 6,
   },
+]
+
+const constructionPhases = [
+  { name: '1. Pre-Construction', href: '/dashboard/phase/pre-construction', phase: 1 },
+  { name: '2. Site Preparation', href: '/dashboard/phase/site-preparation', phase: 2 },
+  { name: '3. Foundation', href: '/dashboard/phase/foundation', phase: 3 },
+  { name: '4. Mechanical Rough-Ins', href: '/dashboard/phase/mechanical-rough', phase: 4 },
+  { name: '5. Building Envelope', href: '/dashboard/phase/building-envelope', phase: 5 },
+  { name: '6. Interior Finishes', href: '/dashboard/phase/interior-finishes', phase: 6 },
+  { name: '7. Final Mechanical', href: '/dashboard/phase/final-mechanical', phase: 7 },
+  { name: '8. Exterior/Landscape', href: '/dashboard/phase/exterior-landscape', phase: 8 },
+  { name: '9. Final Inspections', href: '/dashboard/phase/final-inspections', phase: 9 },
+]
+
+const completedNavItems = [
   {
-    name: 'Schedule',
-    href: '/dashboard/schedule',
+    name: 'Completed Homes',
+    href: '/dashboard/completed',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
   },
-  {
-    name: 'Checklists',
-    href: '/dashboard/checklists',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-      </svg>
-    ),
-  },
+]
+
+const resourceNavItems = [
   {
     name: 'Equipment',
     href: '/dashboard/equipment',
@@ -55,23 +60,11 @@ const underConstructionItems = [
     ),
   },
   {
-    name: 'Subcontractors',
+    name: 'Contractors',
     href: '/dashboard/subcontractors',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-  },
-]
-
-const completedItems = [
-  {
-    name: 'Completed Homes',
-    href: '/dashboard/completed',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
   },
@@ -80,7 +73,7 @@ const completedItems = [
     href: '/dashboard/clients',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
   },
@@ -133,7 +126,7 @@ export default function StaffLayout({
               </svg>
               <input
                 type="search"
-                placeholder="Search properties, buyers, inquiries..."
+                placeholder="Search properties, contractors..."
                 className="w-full pl-10 pr-4 py-2 bg-slate rounded-lg border border-slate-dark focus:outline-none focus:ring-2 focus:ring-newcastle/20 focus:border-newcastle transition-all"
               />
             </div>
@@ -156,7 +149,7 @@ export default function StaffLayout({
               </div>
               <div className="hidden sm:block">
                 <p className="text-sm font-medium text-charcoal">John Doe</p>
-                <p className="text-xs text-charcoal-light">Sales Manager</p>
+                <p className="text-xs text-charcoal-light">Project Manager</p>
               </div>
             </div>
           </div>
@@ -165,12 +158,12 @@ export default function StaffLayout({
 
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-64 bg-white shadow-soft min-h-[calc(100vh-4rem)] sticky top-16">
+        <aside className="w-64 bg-white shadow-soft min-h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
           <nav className="p-4">
-            {/* Main */}
+            {/* Main Navigation */}
             <ul className="space-y-1">
               {mainNavItems.map((item) => {
-                const isActive = pathname === item.href
+                const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href))
                 return (
                   <li key={item.name}>
                     <Link
@@ -189,15 +182,47 @@ export default function StaffLayout({
               })}
             </ul>
 
-            {/* Under Construction */}
+            {/* Construction Phases */}
             <div className="mt-6 pt-6 border-t border-slate">
               <h4 className="px-4 text-xs font-semibold text-charcoal-light uppercase tracking-wider mb-3 flex items-center gap-2">
                 <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-                Under Construction
+                Construction Phases
+              </h4>
+              <ul className="space-y-0.5">
+                {constructionPhases.map((item) => {
+                  const isActive = pathname === item.href
+                  return (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                          isActive
+                            ? 'bg-newcastle text-white shadow-md'
+                            : 'text-charcoal-light hover:bg-slate hover:text-newcastle'
+                        }`}
+                      >
+                        <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center text-xs font-bold ${
+                          isActive ? 'border-white text-white' : 'border-charcoal-light text-charcoal-light'
+                        }`}>
+                          {item.phase}
+                        </span>
+                        <span className="truncate">{item.name.substring(3)}</span>
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+
+            {/* Completed */}
+            <div className="mt-6 pt-6 border-t border-slate">
+              <h4 className="px-4 text-xs font-semibold text-charcoal-light uppercase tracking-wider mb-3 flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full" />
+                Finished
               </h4>
               <ul className="space-y-1">
-                {underConstructionItems.map((item) => {
-                  const isActive = pathname === item.href || (item.href !== '/dashboard/construction' && pathname.startsWith(item.href))
+                {completedNavItems.map((item) => {
+                  const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
                   return (
                     <li key={item.name}>
                       <Link
@@ -210,13 +235,6 @@ export default function StaffLayout({
                       >
                         {item.icon}
                         {item.name}
-                        {item.badge && (
-                          <span className={`ml-auto text-xs px-2 py-0.5 rounded-full ${
-                            isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
-                          }`}>
-                            {item.badge}
-                          </span>
-                        )}
                       </Link>
                     </li>
                   )
@@ -224,14 +242,13 @@ export default function StaffLayout({
               </ul>
             </div>
 
-            {/* Completed Properties */}
+            {/* Resources */}
             <div className="mt-6 pt-6 border-t border-slate">
-              <h4 className="px-4 text-xs font-semibold text-charcoal-light uppercase tracking-wider mb-3 flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full" />
-                Completed Properties
+              <h4 className="px-4 text-xs font-semibold text-charcoal-light uppercase tracking-wider mb-3">
+                Resources
               </h4>
               <ul className="space-y-1">
-                {completedItems.map((item) => {
+                {resourceNavItems.map((item) => {
                   const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
                   return (
                     <li key={item.name}>
@@ -256,39 +273,6 @@ export default function StaffLayout({
                     </li>
                   )
                 })}
-              </ul>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="mt-8 pt-8 border-t border-slate">
-              <h4 className="px-4 text-xs font-semibold text-charcoal-light uppercase tracking-wider mb-3">
-                Quick Actions
-              </h4>
-              <ul className="space-y-1">
-                <li>
-                  <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-charcoal-light hover:bg-slate hover:text-newcastle rounded-lg transition-colors">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                    Start New Build
-                  </button>
-                </li>
-                <li>
-                  <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-charcoal-light hover:bg-slate hover:text-newcastle rounded-lg transition-colors">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                    </svg>
-                    Add Buyer
-                  </button>
-                </li>
-                <li>
-                  <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-charcoal-light hover:bg-slate hover:text-newcastle rounded-lg transition-colors">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Generate Report
-                  </button>
-                </li>
               </ul>
             </div>
 

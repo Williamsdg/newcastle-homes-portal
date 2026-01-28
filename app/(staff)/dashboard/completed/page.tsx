@@ -13,30 +13,16 @@ const completedHomes = [
     completedDate: 'Jan 15, 2024',
     price: 459900,
     salesStatus: 'SOLD',
-    agent: 'Sarah Mitchell',
-    buyer: 'Michael Thompson',
+    projectManager: 'Carlos Hernandez',
+    buildersAgent: 'Sarah Mitchell',
+    buyersAgent: 'Jennifer Adams',
+    buyer: 'Robert & Lisa Thompson',
     closingDate: 'Jan 25, 2024',
-    daysOnMarket: 10,
+    totalContractors: 18,
+    totalEquipmentHours: 312,
   },
   {
     id: '2',
-    address: '67 Grand River Blvd',
-    community: 'Grand River',
-    lot: 'Lot 2',
-    floorPlan: 'The Savannah',
-    sqft: 2340,
-    bedrooms: 4,
-    bathrooms: 2.5,
-    completedDate: 'Jan 10, 2024',
-    price: 429900,
-    salesStatus: 'MODEL',
-    agent: null,
-    buyer: null,
-    closingDate: null,
-    daysOnMarket: null,
-  },
-  {
-    id: '3',
     address: '234 Barimore Way',
     community: 'Barimore',
     lot: 'Lot 9',
@@ -47,13 +33,16 @@ const completedHomes = [
     completedDate: 'Dec 20, 2023',
     price: 489900,
     salesStatus: 'AVAILABLE',
-    agent: 'John Davis',
+    projectManager: 'Mike Rodriguez',
+    buildersAgent: 'John Davis',
+    buyersAgent: null,
     buyer: null,
     closingDate: null,
-    daysOnMarket: 38,
+    totalContractors: 17,
+    totalEquipmentHours: 285,
   },
   {
-    id: '4',
+    id: '3',
     address: '112 Falls Creek Lane',
     community: 'The Falls',
     lot: 'Lot 11',
@@ -64,13 +53,16 @@ const completedHomes = [
     completedDate: 'Dec 15, 2023',
     price: 524900,
     salesStatus: 'PENDING',
-    agent: 'Sarah Mitchell',
+    projectManager: 'James Wilson',
+    buildersAgent: 'Sarah Mitchell',
+    buyersAgent: 'Lisa Chen',
     buyer: 'Emily & David Chen',
     closingDate: 'Feb 15, 2024',
-    daysOnMarket: 28,
+    totalContractors: 19,
+    totalEquipmentHours: 340,
   },
   {
-    id: '5',
+    id: '4',
     address: '456 Havenridge Circle',
     community: 'Havenridge',
     lot: 'Lot 4',
@@ -81,13 +73,16 @@ const completedHomes = [
     completedDate: 'Dec 01, 2023',
     price: 379900,
     salesStatus: 'SOLD',
-    agent: 'John Davis',
+    projectManager: 'Tom Bradley',
+    buildersAgent: 'John Davis',
+    buyersAgent: 'Mark Thompson',
     buyer: 'Robert Johnson',
     closingDate: 'Dec 20, 2023',
-    daysOnMarket: 15,
+    totalContractors: 16,
+    totalEquipmentHours: 248,
   },
   {
-    id: '6',
+    id: '5',
     address: '789 Heritage Oak Dr',
     community: 'Heritage Pines',
     lot: 'Lot 15',
@@ -98,13 +93,16 @@ const completedHomes = [
     completedDate: 'Nov 15, 2023',
     price: 549900,
     salesStatus: 'SOLD',
-    agent: 'Sarah Mitchell',
+    projectManager: 'Carlos Hernandez',
+    buildersAgent: 'Sarah Mitchell',
+    buyersAgent: 'Tom Bradley',
     buyer: 'The Martinez Family',
     closingDate: 'Dec 10, 2023',
-    daysOnMarket: 22,
+    totalContractors: 20,
+    totalEquipmentHours: 395,
   },
   {
-    id: '7',
+    id: '6',
     address: '321 Grand River Way',
     community: 'Grand River',
     lot: 'Lot 8',
@@ -115,27 +113,13 @@ const completedHomes = [
     completedDate: 'Nov 01, 2023',
     price: 399900,
     salesStatus: 'AVAILABLE',
-    agent: 'John Davis',
+    projectManager: 'Mike Rodriguez',
+    buildersAgent: 'John Davis',
+    buyersAgent: null,
     buyer: null,
     closingDate: null,
-    daysOnMarket: 87,
-  },
-  {
-    id: '8',
-    address: '555 Barimore Lane',
-    community: 'Barimore',
-    lot: 'Lot 18',
-    floorPlan: 'The Ashford',
-    sqft: 3100,
-    bedrooms: 4,
-    bathrooms: 3.5,
-    completedDate: 'Oct 20, 2023',
-    price: 512900,
-    salesStatus: 'RESERVED',
-    agent: 'Sarah Mitchell',
-    buyer: 'Amanda & Chris Lee',
-    closingDate: 'Feb 28, 2024',
-    daysOnMarket: 45,
+    totalContractors: 17,
+    totalEquipmentHours: 275,
   },
 ]
 
@@ -149,7 +133,7 @@ export default function CompletedHomesPage() {
   }
 
   const availableCount = completedHomes.filter(h => h.salesStatus === 'AVAILABLE').length
-  const pendingCount = completedHomes.filter(h => h.salesStatus === 'PENDING' || h.salesStatus === 'RESERVED').length
+  const pendingCount = completedHomes.filter(h => h.salesStatus === 'PENDING').length
   const soldCount = completedHomes.filter(h => h.salesStatus === 'SOLD').length
   const totalValue = completedHomes.filter(h => h.salesStatus === 'SOLD').reduce((sum, h) => sum + h.price, 0)
 
@@ -158,30 +142,22 @@ export default function CompletedHomesPage() {
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-heading font-bold text-charcoal">Completed Properties</h1>
-          <p className="text-charcoal-light mt-1">Finished homes ready for sale or already sold</p>
+          <h1 className="text-3xl font-heading font-bold text-charcoal">Completed Homes</h1>
+          <p className="text-charcoal-light mt-1">Finished properties with all 9 construction phases complete</p>
         </div>
-        <div className="flex gap-3">
-          <button className="btn-outline py-2 px-4 text-sm flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-            </svg>
-            Filter
-          </button>
-          <button className="btn-primary py-2 px-4 text-sm flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Export Report
-          </button>
-        </div>
+        <button className="btn-primary py-2 px-4 text-sm flex items-center gap-2">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Export Report
+        </button>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-white p-5 rounded-xl shadow-soft">
           <p className="text-2xl font-bold text-charcoal">{completedHomes.length}</p>
-          <p className="text-sm text-charcoal-light">Total Completed</p>
+          <p className="text-sm text-charcoal-light">Completed</p>
         </div>
         <div className="bg-white p-5 rounded-xl shadow-soft">
           <p className="text-2xl font-bold text-green-600">{availableCount}</p>
@@ -189,11 +165,11 @@ export default function CompletedHomesPage() {
         </div>
         <div className="bg-white p-5 rounded-xl shadow-soft">
           <p className="text-2xl font-bold text-amber-600">{pendingCount}</p>
-          <p className="text-sm text-charcoal-light">Pending / Reserved</p>
+          <p className="text-sm text-charcoal-light">Pending Sale</p>
         </div>
         <div className="bg-white p-5 rounded-xl shadow-soft">
           <p className="text-2xl font-bold text-newcastle">${(totalValue / 1000000).toFixed(2)}M</p>
-          <p className="text-sm text-charcoal-light">Total Sold ({soldCount})</p>
+          <p className="text-sm text-charcoal-light">Sold ({soldCount})</p>
         </div>
       </div>
 
@@ -201,12 +177,10 @@ export default function CompletedHomesPage() {
       <div className="bg-white rounded-xl shadow-soft p-4 mb-6">
         <div className="flex flex-wrap gap-4">
           <select className="px-4 py-2 border border-slate rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-newcastle/20">
-            <option value="">All Status</option>
+            <option value="">All Sales Status</option>
             <option value="AVAILABLE">Available</option>
             <option value="PENDING">Pending</option>
-            <option value="RESERVED">Reserved</option>
             <option value="SOLD">Sold</option>
-            <option value="MODEL">Model</option>
           </select>
           <select className="px-4 py-2 border border-slate rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-newcastle/20">
             <option value="">All Communities</option>
@@ -216,95 +190,95 @@ export default function CompletedHomesPage() {
             <option value="Heritage Pines">Heritage Pines</option>
             <option value="Havenridge">Havenridge</option>
           </select>
-          <select className="px-4 py-2 border border-slate rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-newcastle/20">
-            <option value="">All Agents</option>
-            <option value="Sarah Mitchell">Sarah Mitchell</option>
-            <option value="John Davis">John Davis</option>
-          </select>
           <input
             type="text"
-            placeholder="Search by address or buyer..."
+            placeholder="Search properties..."
             className="px-4 py-2 border border-slate rounded-lg flex-1 min-w-[200px] focus:outline-none focus:ring-2 focus:ring-newcastle/20"
           />
         </div>
       </div>
 
-      {/* Properties Table */}
-      <div className="bg-white rounded-xl shadow-soft overflow-hidden">
-        <table className="w-full">
-          <thead className="bg-slate-light">
-            <tr>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-charcoal">Property</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-charcoal">Status</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-charcoal">Price</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-charcoal">Agent</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-charcoal">Buyer</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-charcoal">Days on Market</th>
-              <th className="px-6 py-4 text-right text-sm font-semibold text-charcoal">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate">
-            {completedHomes.map((home) => (
-              <tr key={home.id} className="hover:bg-slate-light/50 transition-colors">
-                <td className="px-6 py-4">
-                  <div>
-                    <Link
-                      href={`/dashboard/completed/${home.id}`}
-                      className="font-medium text-charcoal hover:text-newcastle block"
-                    >
-                      {home.address}
-                    </Link>
-                    <span className="text-sm text-charcoal-light">{home.community} • {home.floorPlan}</span>
-                  </div>
-                </td>
-                <td className="px-6 py-4">
-                  <span className={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[home.salesStatus]}`}>
-                    {home.salesStatus}
-                  </span>
-                </td>
-                <td className="px-6 py-4">
-                  <span className="font-medium text-charcoal">${home.price.toLocaleString()}</span>
-                </td>
-                <td className="px-6 py-4">
-                  {home.agent ? (
-                    <span className="text-sm text-charcoal">{home.agent}</span>
-                  ) : (
-                    <span className="text-sm text-charcoal-light">—</span>
-                  )}
-                </td>
-                <td className="px-6 py-4">
-                  {home.buyer ? (
-                    <div>
-                      <span className="text-sm text-charcoal block">{home.buyer}</span>
-                      {home.closingDate && (
-                        <span className="text-xs text-charcoal-light">Closing: {home.closingDate}</span>
-                      )}
-                    </div>
-                  ) : (
-                    <span className="text-sm text-charcoal-light">—</span>
-                  )}
-                </td>
-                <td className="px-6 py-4">
-                  {home.daysOnMarket !== null ? (
-                    <span className={`text-sm ${home.daysOnMarket > 60 ? 'text-red-600 font-medium' : 'text-charcoal'}`}>
-                      {home.daysOnMarket} days
-                    </span>
-                  ) : (
-                    <span className="text-sm text-charcoal-light">—</span>
-                  )}
-                </td>
-                <td className="px-6 py-4 text-right">
-                  <Link
-                    href={`/dashboard/completed/${home.id}`}
-                    className="text-newcastle hover:text-accent text-sm font-medium"
-                  >
-                    View Details
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Completed Homes Grid */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {completedHomes.map((home) => (
+          <Link
+            key={home.id}
+            href={`/dashboard/completed/${home.id}`}
+            className="bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-strong transition-shadow"
+          >
+            {/* Header */}
+            <div className="p-5 border-b border-slate">
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <h3 className="font-semibold text-charcoal text-lg">{home.address}</h3>
+                  <p className="text-sm text-charcoal-light">{home.community} • {home.lot}</p>
+                </div>
+                <span className={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[home.salesStatus]}`}>
+                  {home.salesStatus}
+                </span>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-charcoal-light">
+                <span>{home.floorPlan}</span>
+                <span>•</span>
+                <span>{home.bedrooms} bd / {home.bathrooms} ba</span>
+                <span>•</span>
+                <span>{home.sqft.toLocaleString()} sqft</span>
+              </div>
+            </div>
+
+            {/* Price & Completion */}
+            <div className="px-5 py-4 bg-green-50 flex items-center justify-between">
+              <div>
+                <p className="text-2xl font-bold text-newcastle">${home.price.toLocaleString()}</p>
+                <p className="text-xs text-charcoal-light">List Price</p>
+              </div>
+              <div className="text-right">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-medium text-charcoal">All Phases Complete</span>
+                </div>
+                <p className="text-xs text-charcoal-light">{home.completedDate}</p>
+              </div>
+            </div>
+
+            {/* Team & Buyer Info */}
+            <div className="p-5 grid grid-cols-2 gap-4 border-b border-slate">
+              <div>
+                <p className="text-xs text-charcoal-light uppercase tracking-wider mb-1">Project Manager</p>
+                <p className="text-sm font-medium text-charcoal">{home.projectManager}</p>
+              </div>
+              <div>
+                <p className="text-xs text-charcoal-light uppercase tracking-wider mb-1">Builder&apos;s Agent</p>
+                <p className="text-sm font-medium text-charcoal">{home.buildersAgent}</p>
+              </div>
+              <div>
+                <p className="text-xs text-charcoal-light uppercase tracking-wider mb-1">Buyer&apos;s Agent</p>
+                <p className="text-sm font-medium text-charcoal">{home.buyersAgent || '—'}</p>
+              </div>
+              <div>
+                <p className="text-xs text-charcoal-light uppercase tracking-wider mb-1">Buyer</p>
+                <p className="text-sm font-medium text-charcoal">{home.buyer || '—'}</p>
+              </div>
+            </div>
+
+            {/* Construction Summary */}
+            <div className="px-5 py-4 flex items-center justify-between bg-slate-light/50">
+              <div className="flex items-center gap-6">
+                <div>
+                  <p className="text-lg font-bold text-charcoal">{home.totalContractors}</p>
+                  <p className="text-xs text-charcoal-light">Contractors Used</p>
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-charcoal">{home.totalEquipmentHours}h</p>
+                  <p className="text-xs text-charcoal-light">Equipment Hours</p>
+                </div>
+              </div>
+              <span className="text-sm text-newcastle font-medium">View Full Summary →</span>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   )

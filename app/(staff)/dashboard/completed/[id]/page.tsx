@@ -1,16 +1,9 @@
 import Link from 'next/link'
 
-// Generate static params for all completed properties
 export function generateStaticParams() {
   return [
-    { id: '1' },
-    { id: '2' },
-    { id: '3' },
-    { id: '4' },
-    { id: '5' },
-    { id: '6' },
-    { id: '7' },
-    { id: '8' },
+    { id: '1' }, { id: '2' }, { id: '3' },
+    { id: '4' }, { id: '5' }, { id: '6' },
   ]
 }
 
@@ -28,6 +21,11 @@ const completedProperties: Record<string, {
   salesStatus: string
   description: string
   features: string[]
+  projectManager: { name: string; phone: string; email: string }
+  buildersAgent: { name: string; phone: string; email: string }
+  buyersAgent: { name: string; phone: string; email: string } | null
+  buyer: { name: string; phone: string; email: string } | null
+  closingDate: string | null
 }> = {
   '1': {
     id: '1',
@@ -43,24 +41,14 @@ const completedProperties: Record<string, {
     salesStatus: 'SOLD',
     description: 'Beautiful two-story home featuring an open floor plan, gourmet kitchen with granite countertops, and a spacious primary suite on the main level.',
     features: ['Granite Countertops', 'Stainless Appliances', 'Hardwood Floors', 'Covered Patio', '3-Car Garage'],
+    projectManager: { name: 'Carlos Hernandez', phone: '(205) 555-1003', email: 'carlos@newcastlehomes.com' },
+    buildersAgent: { name: 'Sarah Mitchell', phone: '(205) 555-2001', email: 'sarah@newcastlehomes.com' },
+    buyersAgent: { name: 'Jennifer Adams', phone: '(205) 555-3004', email: 'jennifer@realtor.com' },
+    buyer: { name: 'Robert & Lisa Thompson', phone: '(205) 555-4004', email: 'thompsons@email.com' },
+    closingDate: 'Jan 25, 2024',
   },
   '2': {
     id: '2',
-    address: '67 Grand River Blvd',
-    community: 'Grand River',
-    lot: 'Lot 2',
-    floorPlan: 'The Savannah',
-    sqft: 2340,
-    bedrooms: 4,
-    bathrooms: 2.5,
-    completedDate: 'Jan 10, 2024',
-    price: 429900,
-    salesStatus: 'MODEL',
-    description: 'Our showcase model home featuring upgraded finishes throughout, designer selections, and professionally landscaped yard.',
-    features: ['Designer Finishes', 'Smart Home Package', 'Premium Landscaping', 'Upgraded Lighting', 'Custom Paint'],
-  },
-  '3': {
-    id: '3',
     address: '234 Barimore Way',
     community: 'Barimore',
     lot: 'Lot 9',
@@ -73,9 +61,14 @@ const completedProperties: Record<string, {
     salesStatus: 'AVAILABLE',
     description: 'Stunning craftsman style home with attention to detail throughout. Features include coffered ceilings, built-in bookshelves, and a chef kitchen.',
     features: ['Coffered Ceilings', 'Built-in Bookshelves', 'Quartz Countertops', 'Outdoor Fireplace', 'Mudroom'],
+    projectManager: { name: 'Mike Rodriguez', phone: '(205) 555-1001', email: 'mike@newcastlehomes.com' },
+    buildersAgent: { name: 'John Davis', phone: '(205) 555-2002', email: 'john@newcastlehomes.com' },
+    buyersAgent: null,
+    buyer: null,
+    closingDate: null,
   },
-  '4': {
-    id: '4',
+  '3': {
+    id: '3',
     address: '112 Falls Creek Lane',
     community: 'The Falls',
     lot: 'Lot 11',
@@ -86,11 +79,16 @@ const completedProperties: Record<string, {
     completedDate: 'Dec 15, 2023',
     price: 524900,
     salesStatus: 'PENDING',
-    description: 'Spacious modern farmhouse design with bonus room, butler pantry, and premium finishes. Located on a wooded cul-de-sac lot.',
+    description: 'Spacious modern farmhouse design with bonus room, butler pantry, and premium finishes.',
     features: ['Butler Pantry', 'Bonus Room', 'Wooded Lot', 'Premium Tile', 'Wine Storage'],
+    projectManager: { name: 'James Wilson', phone: '(205) 555-1002', email: 'james@newcastlehomes.com' },
+    buildersAgent: { name: 'Sarah Mitchell', phone: '(205) 555-2001', email: 'sarah@newcastlehomes.com' },
+    buyersAgent: { name: 'Lisa Chen', phone: '(205) 555-3002', email: 'lisa@realtor.com' },
+    buyer: { name: 'Emily & David Chen', phone: '(205) 555-4002', email: 'chens@email.com' },
+    closingDate: 'Feb 15, 2024',
   },
-  '5': {
-    id: '5',
+  '4': {
+    id: '4',
     address: '456 Havenridge Circle',
     community: 'Havenridge',
     lot: 'Lot 4',
@@ -101,11 +99,16 @@ const completedProperties: Record<string, {
     completedDate: 'Dec 01, 2023',
     price: 379900,
     salesStatus: 'SOLD',
-    description: 'Charming single-story home perfect for first-time buyers or downsizers. Open concept living with a covered back porch.',
-    features: ['Single Story', 'Open Concept', 'Covered Porch', 'Walk-in Closets', 'Energy Efficient'],
+    description: 'Charming single-story home perfect for first-time buyers. Open concept living.',
+    features: ['Single Story', 'Open Concept', 'Covered Porch', 'Walk-in Closets'],
+    projectManager: { name: 'Tom Bradley', phone: '(205) 555-1004', email: 'tom@newcastlehomes.com' },
+    buildersAgent: { name: 'John Davis', phone: '(205) 555-2002', email: 'john@newcastlehomes.com' },
+    buyersAgent: { name: 'Mark Thompson', phone: '(205) 555-3003', email: 'mark@realtor.com' },
+    buyer: { name: 'Robert Johnson', phone: '(205) 555-4003', email: 'robert@email.com' },
+    closingDate: 'Dec 20, 2023',
   },
-  '6': {
-    id: '6',
+  '5': {
+    id: '5',
     address: '789 Heritage Oak Dr',
     community: 'Heritage Pines',
     lot: 'Lot 15',
@@ -116,11 +119,16 @@ const completedProperties: Record<string, {
     completedDate: 'Nov 15, 2023',
     price: 549900,
     salesStatus: 'SOLD',
-    description: 'Luxury estate home with all the bells and whistles. Guest suite on main, home theater, and expansive outdoor living with kitchen.',
+    description: 'Luxury estate home with guest suite, home theater, and outdoor kitchen.',
     features: ['Guest Suite', 'Home Theater', 'Outdoor Kitchen', 'Pool Ready', 'Wine Cellar'],
+    projectManager: { name: 'Carlos Hernandez', phone: '(205) 555-1003', email: 'carlos@newcastlehomes.com' },
+    buildersAgent: { name: 'Sarah Mitchell', phone: '(205) 555-2001', email: 'sarah@newcastlehomes.com' },
+    buyersAgent: { name: 'Tom Bradley', phone: '(205) 555-3001', email: 'tbradley@realtor.com' },
+    buyer: { name: 'The Martinez Family', phone: '(205) 555-4005', email: 'martinez@email.com' },
+    closingDate: 'Dec 10, 2023',
   },
-  '7': {
-    id: '7',
+  '6': {
+    id: '6',
     address: '321 Grand River Way',
     community: 'Grand River',
     lot: 'Lot 8',
@@ -131,153 +139,75 @@ const completedProperties: Record<string, {
     completedDate: 'Nov 01, 2023',
     price: 399900,
     salesStatus: 'AVAILABLE',
-    description: 'Elegant single-story ranch with split bedroom layout. Large kitchen island and spa-like primary bathroom.',
-    features: ['Split Bedrooms', 'Large Island', 'Spa Bathroom', 'Vaulted Ceilings', 'Study'],
-  },
-  '8': {
-    id: '8',
-    address: '555 Barimore Lane',
-    community: 'Barimore',
-    lot: 'Lot 18',
-    floorPlan: 'The Ashford',
-    sqft: 3100,
-    bedrooms: 4,
-    bathrooms: 3.5,
-    completedDate: 'Oct 20, 2023',
-    price: 512900,
-    salesStatus: 'RESERVED',
-    description: 'Contemporary design with floor-to-ceiling windows and chef kitchen. Premium lot backing to green space.',
-    features: ['Floor-to-Ceiling Windows', 'Premium Lot', 'Green Space View', 'Chef Kitchen', 'Flex Room'],
+    description: 'Elegant single-story ranch with split bedroom layout and spa-like bathroom.',
+    features: ['Split Bedrooms', 'Large Island', 'Spa Bathroom', 'Vaulted Ceilings'],
+    projectManager: { name: 'Mike Rodriguez', phone: '(205) 555-1001', email: 'mike@newcastlehomes.com' },
+    buildersAgent: { name: 'John Davis', phone: '(205) 555-2002', email: 'john@newcastlehomes.com' },
+    buyersAgent: null,
+    buyer: null,
+    closingDate: null,
   },
 }
 
-const salesInfo: Record<string, {
-  agent: { name: string; email: string; phone: string; photo: string } | null
-  buyer: { name: string; email: string; phone: string; preApprovalAmount: number } | null
-  closingDate: string | null
-  listDate: string
-  daysOnMarket: number | null
-  showings: number
-  offers: number
-}> = {
-  '1': {
-    agent: { name: 'Sarah Mitchell', email: 'sarah@newcastlehomes.com', phone: '(205) 555-2001', photo: 'SM' },
-    buyer: { name: 'Michael Thompson', email: 'mthompson@email.com', phone: '(205) 555-3001', preApprovalAmount: 500000 },
-    closingDate: 'Jan 25, 2024',
-    listDate: 'Jan 05, 2024',
-    daysOnMarket: 10,
-    showings: 8,
-    offers: 2,
-  },
-  '2': {
-    agent: null,
-    buyer: null,
-    closingDate: null,
-    listDate: 'Jan 10, 2024',
-    daysOnMarket: null,
-    showings: 45,
-    offers: 0,
-  },
-  '3': {
-    agent: { name: 'John Davis', email: 'john@newcastlehomes.com', phone: '(205) 555-2002', photo: 'JD' },
-    buyer: null,
-    closingDate: null,
-    listDate: 'Dec 20, 2023',
-    daysOnMarket: 38,
-    showings: 15,
-    offers: 0,
-  },
-  '4': {
-    agent: { name: 'Sarah Mitchell', email: 'sarah@newcastlehomes.com', phone: '(205) 555-2001', photo: 'SM' },
-    buyer: { name: 'Emily & David Chen', email: 'chen.family@email.com', phone: '(205) 555-3002', preApprovalAmount: 550000 },
-    closingDate: 'Feb 15, 2024',
-    listDate: 'Dec 15, 2023',
-    daysOnMarket: 28,
-    showings: 12,
-    offers: 1,
-  },
-  '5': {
-    agent: { name: 'John Davis', email: 'john@newcastlehomes.com', phone: '(205) 555-2002', photo: 'JD' },
-    buyer: { name: 'Robert Johnson', email: 'robert.j@email.com', phone: '(205) 555-3003', preApprovalAmount: 400000 },
-    closingDate: 'Dec 20, 2023',
-    listDate: 'Dec 01, 2023',
-    daysOnMarket: 15,
-    showings: 6,
-    offers: 1,
-  },
-  '6': {
-    agent: { name: 'Sarah Mitchell', email: 'sarah@newcastlehomes.com', phone: '(205) 555-2001', photo: 'SM' },
-    buyer: { name: 'The Martinez Family', email: 'martinez@email.com', phone: '(205) 555-3004', preApprovalAmount: 600000 },
-    closingDate: 'Dec 10, 2023',
-    listDate: 'Nov 15, 2023',
-    daysOnMarket: 22,
-    showings: 10,
-    offers: 3,
-  },
-  '7': {
-    agent: { name: 'John Davis', email: 'john@newcastlehomes.com', phone: '(205) 555-2002', photo: 'JD' },
-    buyer: null,
-    closingDate: null,
-    listDate: 'Nov 01, 2023',
-    daysOnMarket: 87,
-    showings: 22,
-    offers: 0,
-  },
-  '8': {
-    agent: { name: 'Sarah Mitchell', email: 'sarah@newcastlehomes.com', phone: '(205) 555-2001', photo: 'SM' },
-    buyer: { name: 'Amanda & Chris Lee', email: 'lees@email.com', phone: '(205) 555-3005', preApprovalAmount: 525000 },
-    closingDate: 'Feb 28, 2024',
-    listDate: 'Oct 20, 2023',
-    daysOnMarket: 45,
-    showings: 18,
-    offers: 2,
-  },
-}
-
-const contractors = [
-  { id: '1', company: 'Rodriguez Concrete & Foundation', trade: 'Foundation', contact: 'Miguel Rodriguez', phone: '(205) 555-1001', rating: 4.8 },
-  { id: '2', company: 'Wilson Framing Co.', trade: 'Framing', contact: 'James Wilson', phone: '(205) 555-1002', rating: 4.9 },
-  { id: '3', company: 'Birmingham Electric Pro', trade: 'Electrical', contact: 'Carlos Hernandez', phone: '(205) 555-1003', rating: 4.7 },
-  { id: '4', company: 'Thompson Plumbing Services', trade: 'Plumbing', contact: 'Derek Thompson', phone: '(205) 555-1004', rating: 4.6 },
-  { id: '5', company: 'Bradley HVAC Solutions', trade: 'HVAC', contact: 'Tom Bradley', phone: '(205) 555-1005', rating: 4.8 },
-  { id: '6', company: 'Alabama Roofing Experts', trade: 'Roofing', contact: 'David Mitchell', phone: '(205) 555-1006', rating: 4.5 },
-  { id: '7', company: 'Precision Drywall Inc.', trade: 'Drywall', contact: 'Robert Chen', phone: '(205) 555-1007', rating: 4.7 },
-  { id: '8', company: 'Southern Paint & Finishes', trade: 'Painting', contact: 'Jennifer Adams', phone: '(205) 555-1008', rating: 4.6 },
+// Combined list of all contractors who worked on each completed property
+const allContractors = [
+  { phase: '1. Pre-Construction', company: 'Birmingham Design Group', role: 'Architect / Residential Designer', contact: 'David Chen', phone: '(205) 555-5001' },
+  { phase: '1. Pre-Construction', company: 'Alabama Survey Co.', role: 'Land Surveyor', contact: 'Robert Taylor', phone: '(205) 555-5003' },
+  { phase: '2. Site Preparation', company: 'Premier Excavation', role: 'Excavation / Grading', contact: 'James Miller', phone: '(205) 555-5010' },
+  { phase: '2. Site Preparation', company: 'AL-One Call', role: 'Utility Locator', contact: 'Service Line', phone: '811' },
+  { phase: '3. Foundation & Structure', company: 'Rodriguez Concrete & Foundation', role: 'Concrete Contractor', contact: 'Miguel Rodriguez', phone: '(205) 555-5020' },
+  { phase: '3. Foundation & Structure', company: 'DryShield Waterproofing', role: 'Waterproofing', contact: 'Tom Harris', phone: '(205) 555-5021' },
+  { phase: '3. Foundation & Structure', company: 'Wilson Framing Co.', role: 'Framing Contractor', contact: 'James Wilson', phone: '(205) 555-5022' },
+  { phase: '3. Foundation & Structure', company: 'Southern Truss Systems', role: 'Truss Manufacturer', contact: 'Keith Anderson', phone: '(205) 555-5023' },
+  { phase: '4. Mechanical Rough-Ins', company: 'Thompson Plumbing Services', role: 'Plumber', contact: 'Derek Thompson', phone: '(205) 555-5030' },
+  { phase: '4. Mechanical Rough-Ins', company: 'Birmingham Electric Pro', role: 'Electrician', contact: 'Carlos Hernandez', phone: '(205) 555-5031' },
+  { phase: '4. Mechanical Rough-Ins', company: 'Bradley HVAC Solutions', role: 'HVAC', contact: 'Tom Bradley', phone: '(205) 555-5032' },
+  { phase: '4. Mechanical Rough-Ins', company: 'SmartHome Wiring Co.', role: 'Low Voltage / Structured Wiring', contact: 'Alex Turner', phone: '(205) 555-5033' },
+  { phase: '5. Building Envelope', company: 'Alabama Roofing Experts', role: 'Roofing Contractor', contact: 'David Mitchell', phone: '(205) 555-5040' },
+  { phase: '5. Building Envelope', company: 'Crystal Clear Windows', role: 'Window & Door Installer', contact: 'Brian Adams', phone: '(205) 555-5041' },
+  { phase: '5. Building Envelope', company: 'Exterior Solutions LLC', role: 'Siding / Exterior', contact: 'Kevin Martin', phone: '(205) 555-5042' },
+  { phase: '5. Building Envelope', company: 'ThermalPro Insulation', role: 'Insulation', contact: 'Steve Clark', phone: '(205) 555-5043' },
+  { phase: '6. Interior Finishes', company: 'Precision Drywall Inc.', role: 'Drywall Contractor', contact: 'Robert Chen', phone: '(205) 555-5050' },
+  { phase: '6. Interior Finishes', company: 'Southern Paint & Finishes', role: 'Painter', contact: 'Jennifer Adams', phone: '(205) 555-5051' },
+  { phase: '6. Interior Finishes', company: 'Fine Trim Carpentry', role: 'Trim Carpenter', contact: 'Michael Scott', phone: '(205) 555-5052' },
+  { phase: '6. Interior Finishes', company: 'Flooring Depot Pro', role: 'Flooring Contractor', contact: 'Lisa Wong', phone: '(205) 555-5053' },
+  { phase: '6. Interior Finishes', company: 'Cabinet World', role: 'Cabinet Installer', contact: 'John Peters', phone: '(205) 555-5054' },
+  { phase: '6. Interior Finishes', company: 'Granite Masters', role: 'Countertop Fabricator', contact: 'Sarah Lee', phone: '(205) 555-5055' },
+  { phase: '7. Final Mechanical', company: 'Thompson Plumbing Services', role: 'Plumber (Return)', contact: 'Derek Thompson', phone: '(205) 555-5030' },
+  { phase: '7. Final Mechanical', company: 'Birmingham Electric Pro', role: 'Electrician (Return)', contact: 'Carlos Hernandez', phone: '(205) 555-5031' },
+  { phase: '7. Final Mechanical', company: 'Bradley HVAC Solutions', role: 'HVAC (Return)', contact: 'Tom Bradley', phone: '(205) 555-5032' },
+  { phase: '7. Final Mechanical', company: 'Home Appliance Center', role: 'Appliance Installation', contact: 'Nancy Wilson', phone: '(205) 555-5060' },
+  { phase: '8. Exterior & Landscape', company: 'Rodriguez Concrete & Foundation', role: 'Flatwork (Driveway/Patios)', contact: 'Miguel Rodriguez', phone: '(205) 555-5020' },
+  { phase: '8. Exterior & Landscape', company: 'Green Thumb Landscaping', role: 'Landscaper', contact: 'Maria Garcia', phone: '(205) 555-5070' },
+  { phase: '9. Final Inspections', company: 'Sparkle Clean Services', role: 'Cleaning Crew', contact: 'Anna Martinez', phone: '(205) 555-5080' },
+  { phase: '9. Final Inspections', company: 'Newcastle Homes', role: 'Punch List Review', contact: 'Project Manager', phone: '(205) 555-1000' },
 ]
 
-const activityLog = [
-  { id: '1', action: 'Property marked as sold', date: 'Jan 25, 2024', user: 'Sarah Mitchell' },
-  { id: '2', action: 'Closing documents signed', date: 'Jan 25, 2024', user: 'System' },
-  { id: '3', action: 'Final walkthrough completed', date: 'Jan 24, 2024', user: 'Sarah Mitchell' },
-  { id: '4', action: 'Inspection passed', date: 'Jan 18, 2024', user: 'System' },
-  { id: '5', action: 'Offer accepted', date: 'Jan 15, 2024', user: 'Sarah Mitchell' },
-  { id: '6', action: 'New showing scheduled', date: 'Jan 12, 2024', user: 'John Davis' },
-  { id: '7', action: 'Property listed', date: 'Jan 05, 2024', user: 'Sarah Mitchell' },
-  { id: '8', action: 'Construction completed', date: 'Jan 02, 2024', user: 'Mike Rodriguez' },
+// Equipment used throughout the project
+const allEquipment = [
+  { name: 'Excavator CAT 320', id: 'EQ-001', phase: 'Site Preparation', hours: 24 },
+  { name: 'Dump Truck - 10yd', id: 'EQ-009', phase: 'Site Preparation', hours: 16 },
+  { name: 'Concrete Mixer Truck', id: 'EQ-002', phase: 'Foundation', hours: 12 },
+  { name: 'Forklift - Telehandler', id: 'EQ-006', phase: 'Foundation & Framing', hours: 56 },
+  { name: 'Nail Gun Set (5 units)', id: 'EQ-005', phase: 'Framing', hours: 120 },
+  { name: 'Air Compressor Industrial', id: 'EQ-007', phase: 'Multiple Phases', hours: 104 },
+  { name: 'Scaffolding Set A', id: 'EQ-003', phase: 'Envelope & Finishes', hours: 72 },
+  { name: 'Scaffolding Set B', id: 'EQ-008', phase: 'Interior Finishes', hours: 48 },
+  { name: 'Laser Level Kit', id: 'EQ-010', phase: 'Interior Finishes', hours: 24 },
+  { name: 'Generator 20kW', id: 'EQ-004', phase: 'Multiple Phases', hours: 80 },
 ]
 
 export default function CompletedDetailPage({ params }: { params: { id: string } }) {
   const property = completedProperties[params.id] || completedProperties['1']
-  const sales = salesInfo[params.id] || salesInfo['1']
 
   const statusColors: Record<string, string> = {
     AVAILABLE: 'bg-green-100 text-green-700',
     PENDING: 'bg-amber-100 text-amber-700',
     SOLD: 'bg-slate-100 text-slate-600',
     RESERVED: 'bg-newcastle-100 text-newcastle-700',
-    MODEL: 'bg-purple-100 text-purple-700',
   }
 
-  const tradeColors: Record<string, string> = {
-    Foundation: 'bg-slate-100 text-slate-700',
-    Framing: 'bg-amber-100 text-amber-700',
-    Electrical: 'bg-yellow-100 text-yellow-700',
-    Plumbing: 'bg-blue-100 text-blue-700',
-    HVAC: 'bg-cyan-100 text-cyan-700',
-    Roofing: 'bg-red-100 text-red-700',
-    Drywall: 'bg-purple-100 text-purple-700',
-    Painting: 'bg-green-100 text-green-700',
-  }
+  const totalEquipmentHours = allEquipment.reduce((sum, eq) => sum + eq.hours, 0)
 
   return (
     <div>
@@ -287,18 +217,24 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Completed Properties
+          Back to Completed Homes
         </Link>
       </div>
 
-      {/* Header */}
+      {/* Property Header */}
       <div className="bg-white rounded-xl shadow-soft p-6 mb-6">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
           <div>
             <div className="flex items-center gap-3 mb-2">
               <h1 className="text-2xl font-heading font-bold text-charcoal">{property.address}</h1>
               <span className={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[property.salesStatus]}`}>
                 {property.salesStatus}
+              </span>
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-700 flex items-center gap-1">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                Construction Complete
               </span>
             </div>
             <p className="text-charcoal-light">{property.community} • {property.lot} • {property.floorPlan}</p>
@@ -311,7 +247,7 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
         </div>
 
         {/* Property Details */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6 pt-6 border-t border-slate">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6 pb-6 border-b border-slate">
           <div>
             <p className="text-2xl font-bold text-charcoal">{property.sqft.toLocaleString()}</p>
             <p className="text-sm text-charcoal-light">Square Feet</p>
@@ -329,161 +265,162 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
             <p className="font-medium text-charcoal">{property.completedDate}</p>
           </div>
           <div>
-            <p className="text-sm text-charcoal-light">Days on Market</p>
-            <p className={`font-medium ${sales.daysOnMarket && sales.daysOnMarket > 60 ? 'text-red-600' : 'text-charcoal'}`}>
-              {sales.daysOnMarket ?? 'N/A'}
-            </p>
+            <p className="text-sm text-charcoal-light">Closing Date</p>
+            <p className="font-medium text-charcoal">{property.closingDate || 'Not yet'}</p>
           </div>
         </div>
 
-        {/* Features */}
-        <div className="mt-6 pt-6 border-t border-slate">
-          <h3 className="text-sm font-semibold text-charcoal mb-3">Features</h3>
-          <div className="flex flex-wrap gap-2">
-            {property.features.map((feature) => (
-              <span key={feature} className="px-3 py-1 bg-slate-light text-charcoal text-sm rounded-full">
-                {feature}
-              </span>
-            ))}
+        {/* Key Personnel */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 bg-slate-light rounded-lg">
+            <p className="text-xs text-charcoal-light uppercase tracking-wider mb-2">Project Manager</p>
+            <p className="font-semibold text-charcoal">{property.projectManager.name}</p>
+            <a href={`tel:${property.projectManager.phone}`} className="text-sm text-newcastle hover:text-accent">{property.projectManager.phone}</a>
+          </div>
+          <div className="p-4 bg-slate-light rounded-lg">
+            <p className="text-xs text-charcoal-light uppercase tracking-wider mb-2">Builder&apos;s Agent</p>
+            <p className="font-semibold text-charcoal">{property.buildersAgent.name}</p>
+            <a href={`tel:${property.buildersAgent.phone}`} className="text-sm text-newcastle hover:text-accent">{property.buildersAgent.phone}</a>
+          </div>
+          <div className="p-4 bg-slate-light rounded-lg">
+            <p className="text-xs text-charcoal-light uppercase tracking-wider mb-2">Buyer&apos;s Agent</p>
+            {property.buyersAgent ? (
+              <>
+                <p className="font-semibold text-charcoal">{property.buyersAgent.name}</p>
+                <a href={`tel:${property.buyersAgent.phone}`} className="text-sm text-newcastle hover:text-accent">{property.buyersAgent.phone}</a>
+              </>
+            ) : (
+              <p className="text-charcoal-light italic">Not assigned</p>
+            )}
+          </div>
+          <div className="p-4 bg-slate-light rounded-lg">
+            <p className="text-xs text-charcoal-light uppercase tracking-wider mb-2">Buyer</p>
+            {property.buyer ? (
+              <>
+                <p className="font-semibold text-charcoal">{property.buyer.name}</p>
+                <a href={`tel:${property.buyer.phone}`} className="text-sm text-newcastle hover:text-accent">{property.buyer.phone}</a>
+              </>
+            ) : (
+              <p className="text-charcoal-light italic">No buyer yet</p>
+            )}
           </div>
         </div>
       </div>
 
+      {/* Summary Stats */}
+      <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="bg-white p-5 rounded-xl shadow-soft text-center">
+          <p className="text-3xl font-bold text-newcastle">{allContractors.length}</p>
+          <p className="text-sm text-charcoal-light">Total Contractors</p>
+        </div>
+        <div className="bg-white p-5 rounded-xl shadow-soft text-center">
+          <p className="text-3xl font-bold text-newcastle">{allEquipment.length}</p>
+          <p className="text-sm text-charcoal-light">Equipment Items</p>
+        </div>
+        <div className="bg-white p-5 rounded-xl shadow-soft text-center">
+          <p className="text-3xl font-bold text-newcastle">{totalEquipmentHours}h</p>
+          <p className="text-sm text-charcoal-light">Total Equipment Hours</p>
+        </div>
+      </div>
+
       <div className="grid lg:grid-cols-3 gap-6">
-        {/* Left Column */}
+        {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Sales Information */}
+          {/* All Contractors */}
           <div className="bg-white rounded-xl shadow-soft overflow-hidden">
-            <div className="p-5 border-b border-slate">
-              <h2 className="text-lg font-heading font-semibold text-charcoal">Sales Information</h2>
+            <div className="p-5 border-b border-slate bg-newcastle text-white">
+              <h2 className="text-lg font-heading font-semibold">All Contractors on Project</h2>
+              <p className="text-sm text-white/80">Complete list of companies who built this home</p>
             </div>
-            <div className="p-5">
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Agent */}
-                <div>
-                  <h3 className="text-sm font-semibold text-charcoal-light uppercase tracking-wider mb-3">Listing Agent</h3>
-                  {sales.agent ? (
-                    <div className="flex items-center gap-4 p-4 bg-slate-light rounded-lg">
-                      <div className="w-12 h-12 bg-newcastle-100 rounded-full flex items-center justify-center">
-                        <span className="text-newcastle font-semibold">{sales.agent.photo}</span>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-charcoal">{sales.agent.name}</h4>
-                        <a href={`mailto:${sales.agent.email}`} className="text-sm text-newcastle hover:text-accent block">
-                          {sales.agent.email}
-                        </a>
-                        <a href={`tel:${sales.agent.phone}`} className="text-sm text-charcoal-light">
-                          {sales.agent.phone}
-                        </a>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="p-4 bg-slate-light rounded-lg text-center text-charcoal-light">
-                      No agent assigned (Model Home)
-                    </div>
-                  )}
-                </div>
-
-                {/* Buyer */}
-                <div>
-                  <h3 className="text-sm font-semibold text-charcoal-light uppercase tracking-wider mb-3">Buyer</h3>
-                  {sales.buyer ? (
-                    <div className="p-4 bg-slate-light rounded-lg">
-                      <h4 className="font-medium text-charcoal mb-2">{sales.buyer.name}</h4>
-                      <div className="space-y-1 text-sm">
-                        <a href={`mailto:${sales.buyer.email}`} className="text-newcastle hover:text-accent block">
-                          {sales.buyer.email}
-                        </a>
-                        <a href={`tel:${sales.buyer.phone}`} className="text-charcoal-light block">
-                          {sales.buyer.phone}
-                        </a>
-                        <p className="text-charcoal-light">
-                          Pre-approved: <span className="text-charcoal font-medium">${sales.buyer.preApprovalAmount.toLocaleString()}</span>
-                        </p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="p-4 bg-slate-light rounded-lg text-center text-charcoal-light">
-                      No buyer yet
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Sales Stats */}
-              <div className="grid grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-charcoal">{sales.showings}</p>
-                  <p className="text-sm text-charcoal-light">Showings</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-charcoal">{sales.offers}</p>
-                  <p className="text-sm text-charcoal-light">Offers</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-charcoal-light">Listed</p>
-                  <p className="font-medium text-charcoal">{sales.listDate}</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-charcoal-light">Closing</p>
-                  <p className="font-medium text-charcoal">{sales.closingDate || '—'}</p>
-                </div>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-slate-light">
+                  <tr>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Phase</th>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Company</th>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Role</th>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Contact</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate">
+                  {allContractors.map((contractor, idx) => (
+                    <tr key={idx} className="hover:bg-slate-light/50 transition-colors">
+                      <td className="px-5 py-3">
+                        <span className="text-xs font-medium text-charcoal-light">{contractor.phase}</span>
+                      </td>
+                      <td className="px-5 py-3">
+                        <span className="font-medium text-charcoal">{contractor.company}</span>
+                      </td>
+                      <td className="px-5 py-3">
+                        <span className="text-sm text-charcoal">{contractor.role}</span>
+                      </td>
+                      <td className="px-5 py-3">
+                        <div>
+                          <span className="text-sm text-charcoal block">{contractor.contact}</span>
+                          <a href={`tel:${contractor.phone}`} className="text-xs text-newcastle hover:text-accent">
+                            {contractor.phone}
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
 
-          {/* Companies Who Worked on Project */}
+          {/* All Equipment Used */}
           <div className="bg-white rounded-xl shadow-soft overflow-hidden">
-            <div className="p-5 border-b border-slate">
-              <h2 className="text-lg font-heading font-semibold text-charcoal">Companies Who Built This Home</h2>
-              <p className="text-sm text-charcoal-light">All contractors and subcontractors involved in construction</p>
+            <div className="p-5 border-b border-slate bg-amber-500 text-white">
+              <h2 className="text-lg font-heading font-semibold">Newcastle Equipment Used</h2>
+              <p className="text-sm text-white/80">Equipment logged throughout construction</p>
             </div>
-            <table className="w-full">
-              <thead className="bg-slate-light">
-                <tr>
-                  <th className="px-5 py-3 text-left text-sm font-semibold text-charcoal">Company</th>
-                  <th className="px-5 py-3 text-left text-sm font-semibold text-charcoal">Trade</th>
-                  <th className="px-5 py-3 text-left text-sm font-semibold text-charcoal">Contact</th>
-                  <th className="px-5 py-3 text-right text-sm font-semibold text-charcoal">Rating</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate">
-                {contractors.map((contractor) => (
-                  <tr key={contractor.id} className="hover:bg-slate-light/50 transition-colors">
-                    <td className="px-5 py-3">
-                      <span className="font-medium text-charcoal">{contractor.company}</span>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-slate-light">
+                  <tr>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Equipment</th>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">ID</th>
+                    <th className="px-5 py-3 text-left text-xs font-semibold text-charcoal uppercase">Phase(s) Used</th>
+                    <th className="px-5 py-3 text-right text-xs font-semibold text-charcoal uppercase">Hours</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate">
+                  {allEquipment.map((equipment, idx) => (
+                    <tr key={idx} className="hover:bg-slate-light/50 transition-colors">
+                      <td className="px-5 py-3">
+                        <span className="font-medium text-charcoal">{equipment.name}</span>
+                      </td>
+                      <td className="px-5 py-3">
+                        <span className="text-sm text-charcoal-light">{equipment.id}</span>
+                      </td>
+                      <td className="px-5 py-3">
+                        <span className="text-sm text-charcoal">{equipment.phase}</span>
+                      </td>
+                      <td className="px-5 py-3 text-right">
+                        <span className="font-medium text-newcastle">{equipment.hours}h</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot className="bg-slate-light">
+                  <tr>
+                    <td colSpan={3} className="px-5 py-3 text-right font-semibold text-charcoal">
+                      Total Equipment Hours:
                     </td>
-                    <td className="px-5 py-3">
-                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${tradeColors[contractor.trade]}`}>
-                        {contractor.trade}
-                      </span>
-                    </td>
-                    <td className="px-5 py-3">
-                      <div>
-                        <span className="text-sm text-charcoal block">{contractor.contact}</span>
-                        <a href={`tel:${contractor.phone}`} className="text-sm text-newcastle hover:text-accent">
-                          {contractor.phone}
-                        </a>
-                      </div>
-                    </td>
-                    <td className="px-5 py-3 text-right">
-                      <div className="flex items-center justify-end gap-1">
-                        <span className="font-medium text-charcoal">{contractor.rating}</span>
-                        <svg className="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      </div>
+                    <td className="px-5 py-3 text-right font-bold text-newcastle">
+                      {totalEquipmentHours}h
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
 
-        {/* Right Column */}
+        {/* Sidebar */}
         <div className="space-y-6">
-          {/* Quick Actions */}
+          {/* Actions */}
           <div className="bg-white rounded-xl shadow-soft p-5">
             <h2 className="text-lg font-heading font-semibold text-charcoal mb-4">Actions</h2>
             <div className="space-y-2">
@@ -494,71 +431,55 @@ export default function CompletedDetailPage({ params }: { params: { id: string }
                 </>
               )}
               {property.salesStatus === 'PENDING' && (
-                <>
-                  <button className="w-full btn-primary py-2 text-sm">Update Closing Status</button>
-                  <button className="w-full btn-outline py-2 text-sm">Send Documents</button>
-                </>
+                <button className="w-full btn-primary py-2 text-sm">Update Closing Status</button>
               )}
               {property.salesStatus === 'SOLD' && (
                 <button className="w-full btn-outline py-2 text-sm">View Closing Documents</button>
               )}
-              <button className="w-full py-2 px-4 text-left text-sm text-charcoal hover:bg-slate-light rounded-lg transition-colors flex items-center gap-2">
+              <button className="w-full py-2 px-4 text-sm text-charcoal hover:bg-slate-light rounded-lg transition-colors flex items-center gap-2">
                 <svg className="w-4 h-4 text-charcoal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                View Photos
+                View All Photos
               </button>
-              <button className="w-full py-2 px-4 text-left text-sm text-charcoal hover:bg-slate-light rounded-lg transition-colors flex items-center gap-2">
+              <button className="w-full py-2 px-4 text-sm text-charcoal hover:bg-slate-light rounded-lg transition-colors flex items-center gap-2">
                 <svg className="w-4 h-4 text-charcoal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                View Floor Plans
-              </button>
-              <button className="w-full py-2 px-4 text-left text-sm text-charcoal hover:bg-slate-light rounded-lg transition-colors flex items-center gap-2">
-                <svg className="w-4 h-4 text-charcoal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Generate Report
+                Export Full Report
               </button>
             </div>
           </div>
 
-          {/* Activity Log */}
-          <div className="bg-white rounded-xl shadow-soft overflow-hidden">
-            <div className="p-5 border-b border-slate">
-              <h2 className="text-lg font-heading font-semibold text-charcoal">Activity Log</h2>
-            </div>
-            <div className="divide-y divide-slate max-h-96 overflow-y-auto">
-              {activityLog.map((activity) => (
-                <div key={activity.id} className="p-4">
-                  <p className="text-sm text-charcoal">{activity.action}</p>
-                  <div className="flex items-center gap-2 mt-1 text-xs text-charcoal-light">
-                    <span>{activity.date}</span>
-                    <span>•</span>
-                    <span>{activity.user}</span>
-                  </div>
-                </div>
+          {/* Features */}
+          <div className="bg-white rounded-xl shadow-soft p-5">
+            <h2 className="text-lg font-heading font-semibold text-charcoal mb-4">Features</h2>
+            <div className="flex flex-wrap gap-2">
+              {property.features.map((feature) => (
+                <span key={feature} className="px-3 py-1 bg-slate-light text-charcoal text-sm rounded-full">
+                  {feature}
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Warranty Info */}
+          {/* Warranty */}
           <div className="bg-white rounded-xl shadow-soft p-5">
-            <h2 className="text-lg font-heading font-semibold text-charcoal mb-4">Warranty Information</h2>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center py-2 border-b border-slate">
+            <h2 className="text-lg font-heading font-semibold text-charcoal mb-4">Warranty</h2>
+            <div className="space-y-2">
+              <div className="flex justify-between py-2 border-b border-slate">
                 <span className="text-sm text-charcoal">Structural</span>
                 <span className="text-sm font-medium text-charcoal">10 Years</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate">
+              <div className="flex justify-between py-2 border-b border-slate">
                 <span className="text-sm text-charcoal">Systems</span>
                 <span className="text-sm font-medium text-charcoal">2 Years</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate">
+              <div className="flex justify-between py-2 border-b border-slate">
                 <span className="text-sm text-charcoal">Workmanship</span>
                 <span className="text-sm font-medium text-charcoal">1 Year</span>
               </div>
-              <div className="flex justify-between items-center py-2">
+              <div className="flex justify-between py-2">
                 <span className="text-sm text-charcoal">Appliances</span>
                 <span className="text-sm font-medium text-charcoal">Manufacturer</span>
               </div>
