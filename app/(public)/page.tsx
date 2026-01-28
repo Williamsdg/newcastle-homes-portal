@@ -114,13 +114,13 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 leading-tight tracking-tight">
-              Stop Renting.
-              <span className="block text-gradient">Start Living.</span>
+              Your Forever
+              <span className="block text-gradient">Starts Here.</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-              New homes from <span className="font-bold">$349,900</span> in Alabama's most
-              desirable communities. 25 years of building homes people love.
+              New homes from <span className="font-bold">$349,900</span> across Alabama's
+              finest communities. 25 years of crafting homes where families thrive.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
