@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', system-ui, sans-serif;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #006EB5;
+  color: white;
+}
+
+@layer components {
+  /* Primary CTA button - warm and inviting */
+  .btn-primary {
+    @apply bg-warmth hover:bg-warmth-dark text-white font-semibold py-3 px-8 rounded-lg
+           transition-all duration-300 shadow-warm hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* Secondary button - Newcastle blue */
+  .btn-secondary {
+    @apply bg-newcastle hover:bg-newcastle-dark text-white font-semibold py-3 px-8 rounded-lg
+           transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* Outline button */
+  .btn-outline {
+    @apply border-2 border-newcastle text-newcastle hover:bg-newcastle hover:text-white
+           font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+  }
+
+  /* White outline button for dark backgrounds */
+  .btn-outline-white {
+    @apply border-2 border-white text-white hover:bg-white hover:text-newcastle
+           font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+  }
+
+  /* Gradient button - fun and entertaining */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-newcastle via-newcastle-light to-warmth text-white font-bold
+           py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5
+           bg-[length:200%_100%] hover:bg-right;
+  }
+
+  /* Section headings */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-heading font-bold text-charcoal mb-4;
+  }
+
+  .section-heading-light {
+    @apply text-3xl md:text-4xl font-heading font-bold text-white mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg text-charcoal-light max-w-2xl font-light;
+  }
+
+  /* Cards with warm shadows */
+  .card {
+    @apply bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300
+           hover:shadow-warm hover:-translate-y-1;
+  }
+
+  .card-bordered {
+    @apply bg-white rounded-xl shadow-soft overflow-hidden border-l-4 border-warmth
+           transition-all duration-300 hover:shadow-warm;
+  }
+
+  /* Feature badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-newcastle/10 text-newcastle;
+  }
+
+  .badge-warm {
+    @apply badge bg-warmth/10 text-warmth-dark;
+  }
+
+  .badge-sage {
+    @apply badge bg-sage/10 text-sage-dark;
+  }
+
+  /* Decorative elements */
+  .accent-bar {
+    @apply h-1 w-16 bg-gradient-to-r from-newcastle to-warmth rounded-full;
+  }
+
+  /* Warm glow effect for special elements */
+  .warm-glow {
+    @apply relative;
+  }
+
+  .warm-glow::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-warmth/20 to-newcastle/20 rounded-xl blur-lg opacity-0
+           transition-opacity duration-300;
+  }
+
+  .warm-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Animated underline for links */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-warmth transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Stats counter style */
+  .stat-number {
+    @apply text-4xl md:text-5xl font-bold bg-gradient-to-r from-newcastle to-warmth bg-clip-text text-transparent;
+  }
+
+  /* Image overlay for hero sections */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-charcoal-dark/80 via-charcoal-dark/60 to-transparent;
+  }
+
+  /* Fun hover effect for community cards */
+  .community-card {
+    @apply card group cursor-pointer;
+  }
+
+  .community-card:hover .community-image {
+    @apply scale-110;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-newcastle to-warmth bg-clip-text text-transparent;
+  }
+
+  /* Smooth scroll snap */
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .scroll-snap-center {
+    scroll-snap-align: center;
+  }
+}
+
+/* Custom scrollbar for a polished feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #006EB5, #1A80B6);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #005a94;
+}
