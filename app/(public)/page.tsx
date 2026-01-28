@@ -217,7 +217,7 @@ export default function HomePage() {
                     fill
                     className="object-cover community-image transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-newcastle-950/90 via-newcastle-900/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-newcastle-950 via-newcastle-900/60 to-transparent" />
 
                   {community.featured && (
                     <div className="absolute top-4 left-4">
@@ -227,8 +227,8 @@ export default function HomePage() {
                     </div>
                   )}
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="flex items-center gap-2 text-newcastle-200 text-sm mb-1">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                    <div className="flex items-center gap-2 text-white font-medium text-sm mb-1">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       </svg>
