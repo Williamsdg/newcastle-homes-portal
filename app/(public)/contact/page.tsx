@@ -65,7 +65,7 @@ export default function ContactPage() {
                 <div className="w-10 h-10 bg-newcastle rounded-lg flex items-center justify-center">
                   <span className="text-white font-heading font-bold text-lg">N</span>
                 </div>
-                <span className="font-heading font-bold text-xl text-charcoal">Newcastle Homes</span>
+                <span className="font-heading font-bold text-xl text-charcoal">Crestview Homes</span>
               </Link>
               <nav className="hidden md:flex items-center gap-8">
                 <Link href="/#communities" className="text-charcoal-light hover:text-newcastle transition-colors">Communities</Link>
@@ -116,7 +116,7 @@ export default function ContactPage() {
               <div className="w-10 h-10 bg-newcastle rounded-lg flex items-center justify-center">
                 <span className="text-white font-heading font-bold text-lg">N</span>
               </div>
-              <span className="font-heading font-bold text-xl text-charcoal">Newcastle Homes</span>
+              <span className="font-heading font-bold text-xl text-charcoal">Crestview Homes</span>
             </Link>
             <nav className="hidden md:flex items-center gap-8">
               <Link href="/#communities" className="text-charcoal-light hover:text-newcastle transition-colors">Communities</Link>
@@ -381,7 +381,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-charcoal">Email</p>
-                    <p className="text-charcoal-light text-sm">info@newcastlehomes.com</p>
+                    <p className="text-charcoal-light text-sm">info@demobuilders.com</p>
                   </div>
                 </div>
               </div>
@@ -431,10 +431,10 @@ export default function ContactPage() {
               <div className="w-10 h-10 bg-newcastle rounded-lg flex items-center justify-center">
                 <span className="text-white font-heading font-bold text-lg">N</span>
               </div>
-              <span className="font-heading font-bold text-xl">Newcastle Homes</span>
+              <span className="font-heading font-bold text-xl">Crestview Homes</span>
             </div>
             <p className="text-white/60 text-sm">
-              &copy; 2024 Newcastle Homes. All rights reserved.
+              &copy; 2024 Crestview Homes. All rights reserved.
             </p>
           </div>
         </div>

@@ -180,14 +180,14 @@ const checklists = [
 ]
 
 const workers = [
-  { id: '1', name: 'Mike Rodriguez', role: 'Superintendent', company: 'Newcastle Homes', phone: '(205) 555-1001', hoursLogged: 320 },
-  { id: '2', name: 'Rodriguez Concrete & Foundation', role: 'Foundation', company: 'Rodriguez Concrete', phone: '(205) 555-1002', hoursLogged: 80 },
-  { id: '3', name: 'Wilson Framing Co.', role: 'Framing', company: 'Wilson Framing', phone: '(205) 555-1003', hoursLogged: 160 },
-  { id: '4', name: 'Birmingham Electric Pro', role: 'Electrical', company: 'Birmingham Electric', phone: '(205) 555-1004', hoursLogged: 95 },
-  { id: '5', name: 'Thompson Plumbing Services', role: 'Plumbing', company: 'Thompson Plumbing', phone: '(205) 555-1005', hoursLogged: 72 },
-  { id: '6', name: 'Bradley HVAC Solutions', role: 'HVAC', company: 'Bradley HVAC', phone: '(205) 555-1006', hoursLogged: 48 },
-  { id: '7', name: 'Alabama Roofing Experts', role: 'Roofing', company: 'AL Roofing', phone: '(205) 555-1007', hoursLogged: 40 },
-  { id: '8', name: 'Precision Drywall Inc.', role: 'Drywall', company: 'Precision Drywall', phone: '(205) 555-1008', hoursLogged: 56 },
+  { id: '1', name: 'Mike Rodriguez', role: 'Superintendent', company: 'Crestview Homes', phone: '(205) 555-1001', hoursLogged: 320 },
+  { id: '2', name: 'Demo Concrete & Foundation', role: 'Foundation', company: 'Rodriguez Concrete', phone: '(205) 555-1002', hoursLogged: 80 },
+  { id: '3', name: 'Demo Framing Co.', role: 'Framing', company: 'Wilson Framing', phone: '(205) 555-1003', hoursLogged: 160 },
+  { id: '4', name: 'Demo Electric Pro', role: 'Electrical', company: 'Birmingham Electric', phone: '(205) 555-1004', hoursLogged: 95 },
+  { id: '5', name: 'Demo Plumbing Services', role: 'Plumbing', company: 'Thompson Plumbing', phone: '(205) 555-1005', hoursLogged: 72 },
+  { id: '6', name: 'Demo HVAC Solutions', role: 'HVAC', company: 'Bradley HVAC', phone: '(205) 555-1006', hoursLogged: 48 },
+  { id: '7', name: 'Demo Roofing Experts', role: 'Roofing', company: 'AL Roofing', phone: '(205) 555-1007', hoursLogged: 40 },
+  { id: '8', name: 'Demo Drywall Inc.', role: 'Drywall', company: 'Precision Drywall', phone: '(205) 555-1008', hoursLogged: 56 },
 ]
 
 export default function ConstructionDetailPage({ params }: { params: { id: string } }) {

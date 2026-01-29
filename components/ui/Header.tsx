@@ -41,7 +41,7 @@ export default function Header() {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-heading font-bold text-newcastle tracking-tight">
-                  Newcastle
+                  Crestview
                 </span>
                 <span className="text-xs text-accent font-semibold uppercase tracking-widest">
                   Homes

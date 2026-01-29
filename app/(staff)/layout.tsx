@@ -110,7 +110,7 @@ export default function StaffLayout({
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-heading font-bold text-newcastle tracking-tight">
-                Newcastle
+                Crestview
               </span>
               <span className="text-[10px] text-accent font-semibold uppercase tracking-widest -mt-1">
                 Staff Portal

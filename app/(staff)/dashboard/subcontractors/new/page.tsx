@@ -108,7 +108,7 @@ export default function NewSubcontractorPage() {
                 value={formData.companyName}
                 onChange={handleChange}
                 required
-                placeholder="e.g., Thompson Plumbing Services"
+                placeholder="e.g., Demo Plumbing Services"
                 className="w-full px-4 py-3 border border-slate rounded-lg focus:outline-none focus:ring-2 focus:ring-newcastle/20 focus:border-newcastle"
               />
             </div>

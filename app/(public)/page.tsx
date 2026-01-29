@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://dlqxt4mfnxo6k.cloudfront.net/newcastle-homes.com/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2J1aWxkZXJjbG91ZC9iNmQ2MDYxZDQzZDFmZGEyMTZkODMxY2YxNWE1MGQ3Ni5qcGVn/exact/webp/600/380"
-            alt="Newcastle Homes"
+            alt="Crestview Homes"
             fill
             className="object-cover"
             priority
@@ -155,24 +155,24 @@ export default function HomePage() {
                 Alabama's Most Trusted<br />Home Builder
               </h2>
               <p className="text-lg text-charcoal-light mb-6 leading-relaxed">
-                Since 1997, Newcastle Homes has built over <strong>1,500 homes</strong> for
+                Since 1997, Crestview Homes has built over <strong>1,500 homes</strong> for
                 families across North and Central Alabama. We're not just building houses —
                 we're building communities where people thrive.
               </p>
               <p className="text-lg text-charcoal-light mb-8 leading-relaxed">
-                Every Newcastle home comes with our commitment to quality, transparency,
+                Every Crestview home comes with our commitment to quality, transparency,
                 and exceptional service. That's why we maintain an <strong>A+ BBB rating</strong> and
                 why families keep choosing us.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/about" className="btn-secondary">
-                  Why Newcastle
+                  Why Crestview
                 </Link>
-                <a href="tel:2056712931" className="btn-outline flex items-center gap-2">
+                <a href="tel:5551234567" className="btn-outline flex items-center gap-2">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  (205) 671-2931
+                  (555) 123-4567
                 </a>
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="section-heading-light mb-4">Trusted by 1,500+ Alabama Families</h2>
             <p className="text-newcastle-200 text-lg max-w-2xl mx-auto">
-              Don't take our word for it. Here's what homeowners say about their Newcastle experience.
+              Don't take our word for it. Here's what homeowners say about their Crestview experience.
             </p>
           </div>
 
@@ -332,7 +332,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-white/90 mb-6 leading-relaxed">
-                "Newcastle made our first home buying experience easy and
+                "Crestview made our first home buying experience easy and
                 enjoyable. We love our new home in Barimore!"
               </p>
               <div>
@@ -357,18 +357,18 @@ export default function HomePage() {
 
           <p className="text-xl text-charcoal-light mb-8 max-w-2xl mx-auto">
             Take the first step today. Tour any of our 9 communities and
-            discover why 1,500+ families chose Newcastle.
+            discover why 1,500+ families chose Crestview.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <Link href="/contact" className="btn-primary">
               Schedule Your Tour
             </Link>
-            <a href="tel:2056712931" className="btn-outline flex items-center gap-2">
+            <a href="tel:5551234567" className="btn-outline flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call (205) 671-2931
+              Call (555) 123-4567
             </a>
           </div>
 

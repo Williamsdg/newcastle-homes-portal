@@ -399,7 +399,7 @@ export default function PropertyDetailClient({ property, constructionPhases }: {
 
                   {/* Equipment Used */}
                   <div className="mb-6">
-                    <h3 className="text-sm font-semibold text-charcoal uppercase tracking-wider mb-3">Newcastle Equipment Used</h3>
+                    <h3 className="text-sm font-semibold text-charcoal uppercase tracking-wider mb-3">Crestview Equipment Used</h3>
                     {phase.equipment.length > 0 ? (
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                         {phase.equipment.map((item, idx) => (
@@ -413,7 +413,7 @@ export default function PropertyDetailClient({ property, constructionPhases }: {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-sm text-charcoal-light italic">No Newcastle equipment logged for this phase</p>
+                      <p className="text-sm text-charcoal-light italic">No Crestview equipment logged for this phase</p>
                     )}
                     <button className="mt-3 text-sm text-newcastle hover:text-accent font-medium">+ Log Equipment</button>
                   </div>

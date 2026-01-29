@@ -183,7 +183,7 @@ export default function PropertiesPage() {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-heading font-bold text-charcoal">All Properties</h1>
-          <p className="text-charcoal-light mt-1">Newcastle Homes construction projects</p>
+          <p className="text-charcoal-light mt-1">Crestview Homes construction projects</p>
         </div>
         <Link href="/dashboard/properties/new" className="btn-primary py-2 px-4 text-sm flex items-center gap-2">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
